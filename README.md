@@ -1,2 +1,2 @@
 # Bistrot-Grand-Soleil
-Bistrot Grand Soleil レストラン
+Bistrot Grand Soleil 
