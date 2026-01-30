@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu List | ビストログランソレーユ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-yellow: #f4d03f;
+            --deep-brown: #4e342e;
+            --bg-cream: #fffdf5;
+            --text-main: #333;
+        }
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            padding: 40px 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { text-align: center; color: var(--deep-brown); border-bottom: 2px solid var(--primary-yellow); padding-bottom: 10px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--deep-brown); text-decoration: none; font-weight: bold; }
+        
+        .category-title { background: var(--deep-brown); color: white; padding: 10px; margin-top: 40px; border-radius: 5px; }
+        .item-box { background: white; padding: 15px; margin-bottom: 10px; border-bottom: 1px solid #eee; }
+        .item-name { font-weight: bold; display: flex; justify-content: space-between; }
+        .item-desc { font-size: 0.85rem; color: #666; margin-top: 5px; line-height: 1.6; }
+        .price { color: var(--deep-brown); }
+
+        /* ワイン詳細用 */
+        .wine-detail { font-size: 0.8rem; background: #f9f9f9; padding: 10px; margin-top: 5px; border-left: 3px solid var(--primary-yellow); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> トップページへ戻る</a>
+        <h1>Drink & Wine List</h1>
+
+        <h2 class="category-title">🍺 Beer & Others</h2>
+        <div class="item-box">
+            <div class="item-name"><span>キリン一番搾り 中瓶</span><span class="price">¥1,000</span></div>
+        </div>
+        <div class="item-box">
+            <div class="item-name"><span>キリン ノンアルコールビール小瓶</span><span class="price">¥600</span></div>
+        </div>
+        <div class="item-box">
+            <div class="item-name"><span>グラスワイン 赤／白</span><span class="price">¥1,000 / ¥4,000〜</span></div>
+        </div>
+
+        <h2 class="category-title">🥂 Non Alcohol</h2>
+        <div class="item-box">
+            <div class="item-name"><span>ノンアルコールワイン（赤／白／泡）</span><span class="price">¥1,200</span></div>
+            <div class="item-desc">グラス ¥1,200 / ボトル ¥5,000</div>
+        </div>
+        <div class="item-box">
+            <div class="item-name"><span>ソフトドリンク各種</span><span class="price">¥600</span></div>
+            <div class="item-desc">オレンジ / グレープフルーツ / ジンジャーエール / 烏龍茶 / コーヒー / 紅茶</div>
+        </div>
+
+        <h2 class="category-title">⚪ Vin Blanc (白ワイン)</h2>
+        <div class="item-box">
+            <div class="item-name"><span>キュヴェ・ド・ラ・メゾン ブラン</span><span class="price">¥6,000</span></div>
+            <div class="wine-detail">産地：フランス。品種：シャルドネ100%。力強い香りで、まろやかで滑らか。バランスの取れた味わいです。</div>
+        </div>
+        <div class="item-box">
+            <div class="item-name"><span>ドゥルト・ラ・グラン・キュヴェ</span><span class="price">¥8,000</span></div>
+            <div class="wine-detail">産地：ボルドー。品種：ソーヴィニヨン・ブラン100%。レモンやグレープフルーツの香り高く、スッキリしたエレガントなボルドー。</div>
+        </div>
+        <h2 class="category-title">🔴 Vin Rouge (赤ワイン)</h2>
+        <div class="item-box">
+            <div class="item-name"><span>オート・コート・ド・ニュイ 2022</span><span class="price">¥20,000</span></div>
+            <div class="wine-detail">産地：ブルゴーニュ。品種：ピノ・ノワール100%。黒果実の香り、活き活きとした長い余韻の後味が続く。</div>
+        </div>
+        <div class="item-box">
+            <div class="item-name"><span>ピノ・ノワール I.G.P ド・ラ・オート・マルス</span><span class="price">¥10,000</span></div>
+            <div class="wine-detail">ピノ・ノワール100%。芳しいラズベリーを思わせる香り。鮮やかな色合い。シルキーで瑞々しい味わい。</div>
+        </div>
+
+        <h2 class="category-title">🥃 Digestif (食後酒)</h2>
+        <div class="item-box">
+            <div class="item-name"><span>マール・ド・ブルゴーニュ</span><span class="price">¥3,000</span></div>
+        </div>
+        <div class="item-box">
+            <div class="item-name"><span>グラッパ・ディ・サッシカイア</span><span class="price">¥2,000</span></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding-bottom: 50px;">
+            <a href="index.html" class="back-link">トップページへ戻る</a>
+        </div>
+    </div>
+</body>
+</html>
