@@ -14,10 +14,12 @@
         h2 { background: var(--deep-brown); color: white; padding: 10px 20px; border-radius: 5px; margin-top: 60px; font-size: 1.4rem; }
         h3 { border-left: 5px solid var(--primary-yellow); padding-left: 15px; margin-top: 40px; color: var(--deep-brown); }
         .item-row { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .item-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; }
-        .price { color: var(--deep-brown); white-space: nowrap; }
+        .item-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; border-bottom: 1px dotted #eee; padding-bottom: 5px; margin-bottom: 10px; }
+        .price { color: var(--deep-brown); white-space: nowrap; margin-left: 10px; }
         .item-detail { font-size: 0.9rem; color: #555; }
         .spec-line { font-size: 0.85rem; color: #888; margin-bottom: 5px; font-weight: bold; }
+        .soft-list { display: flex; flex-wrap: wrap; gap: 10px 20px; list-style: none; padding: 0; margin: 10px 0 0 0; }
+        .soft-list li { background: #f9f9f9; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; border: 1px solid #eee; }
         footer { text-align: center; margin-top: 80px; padding-bottom: 40px; }
     </style>
 </head>
@@ -36,141 +38,152 @@
 
         <h2>🥂 Non Alcohol & Soft drink</h2>
         <div class="item-row">
-            <div class="item-header"><span>ノンアルコールワイン（赤／白／スパークリング）</span><span class="price">グラス ¥1,200 / ボトル ¥5,000</span></div>
+            <div class="item-header"><span>ノンアルコールワイン (赤／白／スパークリング)</span><span class="price">グラス ¥1,200 / ボトル ¥5,000</span></div>
+        </div>
+        <div class="item-row">
             <div class="item-header"><span>ペリエ 750ml (2〜3名様用)</span><span class="price">¥1,200</span></div>
-            <div class="item-header"><span>オレンジ / グレープフルーツ / ジンジャーエール / 烏龍茶 / コーヒー / 紅茶</span><span class="price">各 ¥600</span></div>
+        </div>
+        <div class="item-row">
+            <div class="item-header"><span>ソフトドリンク各種</span><span class="price">各 ¥600</span></div>
+            <ul class="soft-list">
+                <li>オレンジジュース</li>
+                <li>グレープフルーツジュース</li>
+                <li>ジンジャーエール</li>
+                <li>烏龍茶</li>
+                <li>コーヒー</li>
+                <li>紅茶</li>
+            </ul>
         </div>
 
         <h2>🍷 Aperitif (食前酒)</h2>
         <div class="item-row">
             <div class="item-header"><span>キール</span><span class="price">¥1,000</span></div>
             <div class="item-header"><span>キールロワイヤル / ミモザ / ディタインペリアル</span><span class="price">各 ¥1,500</span></div>
-            <div class="item-header"><span>カンパリオレンジ / カンパリソーダ / カシスオレンジ / カシスソーダ</span><span class="price">各 ¥900</span></div>
-            <div class="item-header"><span>ジントニック / ファジーネーブル / ディタオレンジ / ディタグレープフルーツ / ディタエイジア</span><span class="price">各 ¥900</span></div>
+            <div class="item-header"><span>カンパリオレンジ / カンパリソーダ</span><span class="price">各 ¥900</span></div>
+            <div class="item-header"><span>カシスオレンジ / カシスソーダ</span><span class="price">各 ¥900</span></div>
+            <div class="item-header"><span>ジントニック / ファジーネーブル</span><span class="price">各 ¥900</span></div>
+            <div class="item-header"><span>ディタオレンジ / ディタグレープフルーツ / ディタエイジア</span><span class="price">各 ¥900</span></div>
         </div>
 
         <h2>⚪ Vin Blanc (白ワイン)</h2>
         <h3>おすすめの白</h3>
         <div class="item-row">
             <div class="item-header"><span>キュヴェ・ド・ラ・メゾン ブラン</span><span class="price">¥6,000</span></div>
-            <div class="spec-line">産地：フランス / 品種：シャルドネ100% / 味わい：辛口</div>
+            <div class="spec-line">産地：フランス / ラングドック・ルーション。品種：シャルドネ100%。味わい：辛口。</div>
             <div class="item-detail">歴史的な町ベジエ、サン・シニアン地区の銘醸畑。典型的な南フランスのシャルドネ。力強い香りで、まろやかで滑らか。きれいにバランスの取れた味わいです。</div>
         </div>
         <div class="item-row">
             <div class="item-header"><span>ドゥルト・ラ・グラン・キュヴェ ソーヴィニヨン・ブラン</span><span class="price">¥8,000</span></div>
-            <div class="spec-line">産地：フランス / 品種：ソーヴィニヨン・ブラン100% / 味わい：辛口</div>
-            <div class="item-detail">レモンやグレープフルーツの香り高く、スッキリした辛口のエレガントな白。生き生きとした味わいはミネラル感を感じ、風味豊かでフレッシュ。</div>
+            <div class="spec-line">産地：フランス / ボルドー。品種：ソーヴィニヨン・ブラン100%。味わい：辛口。</div>
+            <div class="item-detail">レモンやグレープフルーツの香り高く、スッキリした辛口のエレガントな白ワイン。生き生きとした味わいはミネラル感を感じ、風味豊かでフレッシュで爽やかなボルドー！</div>
         </div>
         <div class="item-row">
-            <div class="item-header"><span>コート・デュ・ローヌ ヴァルヴィニエール</span><span class="price">¥8,000</span></div>
-            <div class="spec-line">品種：ヴィオニエ100% / 味わい：辛口</div>
-            <div class="item-detail">香りが豊かで旨み・酸味のバランスが良い。ボリュームと酸味、辛味のしっかりとしたミネラル。厚みのある味わいで様々なお食事にピッタリはまります。</div>
+            <div class="item-header"><span>コート・デュ・ローヌ ヴァルヴィニエール (アントニー・パレ)</span><span class="price">¥8,000</span></div>
+            <div class="item-detail">高級品種ヴィオニエ100%。香りが豊かで旨み・酸味のバランスが良い辛口。本来ならサン・ジョセフの白としても造れる畑。ボリュームと酸味、辛味のしっかりとしたミネラル。厚みのある味わい。アフターも舌の上で心地よく感じます。</div>
         </div>
         <div class="item-row">
-            <div class="item-header"><span>ブルゴーニュ アリゴテ（フランソワ・ゲ）</span><span class="price">¥10,000</span></div>
-            <div class="spec-line">品種：アリゴテ100% / 平均60年樹齢 / 生産本数1500本</div>
-            <div class="item-detail">ライムのフレッシュな香りから次第にオレンジのような南国的な香りへ。透明感がありつつふくよか。ハモ、白焼き、牡蠣、揚げ物などに。</div>
+            <div class="item-header"><span>ブルゴーニュ アリゴテ (フランソワ・ゲ)</span><span class="price">¥10,000</span></div>
+            <div class="spec-line">アリゴテ100%。平均60年樹齢。生産本数1500本。</div>
+            <div class="item-detail">初めライムのフレッシュな香り。次第にオレンジのような南国的な、温かみのある香りが出てくる。フレッシュでミネラリー。透明感。ふくよかさや厚みもある。ハモ、白焼き、牡蠣、冷製肉、揚げ物、ジャンボンベルシェに。</div>
         </div>
 
-        <h3>白ワイン詳細リスト</h3>
-        <div class="item-row">
-            <div class="item-header"><span>シャンパーニュ グランクリュ オジェ ブランドブラン</span><span class="price">¥15,000</span></div>
-            <div class="item-header"><span>シャンパーニュ ロワイエ キュヴェ・ド・レゼルヴ ブリュット</span><span class="price">¥11,000</span></div>
-            <div class="item-header"><span>アルザス・ヴォルクスハイム リースリング</span><span class="price">¥7,500</span></div>
-            <div class="item-header"><span>アルザス ゲヴェ ルツトラミネール キュヴェ・マノン</span><span class="price">¥10,000</span></div>
-            <div class="item-header"><span>ギュリヴェール ボルドーブラン</span><span class="price">¥5,000</span></div>
-            <div class="item-header"><span>シャブリ シャトー・ド・フレイ</span><span class="price">¥10,000</span></div>
-            <div class="item-header"><span>ブルゴーニュ・シャルドネ ドゥヴネイ・マルス</span><span class="price">¥11,000</span></div>
-            <div class="item-header"><span>ムルソー・プルミエクリュ クリスチャン・ベラン</span><span class="price">¥28,000</span></div>
-            <div class="item-header"><span>ピエール・アントナン ソーヴィニヨンブラン</span><span class="price">¥5,500</span></div>
-            <div class="item-header"><span>テラス・ド・ギレム ヴィエイユ・ヴューニュ・ブラン</span><span class="price">¥4,400</span></div>
-            <div class="item-header"><span>プレジュジェ シャルドネ メゾン・ヴォントナック</span><span class="price">¥5,000</span></div>
-            <div class="item-header"><span>テラス・ド・ギレム ヴィオニエ ムーラン・ド・ガサック</span><span class="price">¥5,000</span></div>
-            <div class="item-header"><span>ミュスカデ・セーブル・エ・メーヌ シュルリー</span><span class="price">¥4,800</span></div>
-            <div class="item-header"><span>プティブルジョワ・ソーヴィニヨンブラン</span><span class="price">¥5,800</span></div>
-            <div class="item-header"><span>サンセール・ブラン フランソワ・クロシェ</span><span class="price">¥11,000</span></div>
-            <div class="item-header"><span>ヴーヴレイ マルク・ブレディフ</span><span class="price">¥8,000</span></div>
-            <div class="item-header"><span>ヴァン・ド・サヴォワ アビーム フィリップ・ラヴィエ</span><span class="price">¥5,000</span></div>
-        </div>
+        <h3>シャンパーニュ・白ワイン詳細リスト</h3>
+        <div class="item-row"><div class="item-header"><span>シャンパーニュ グランクリュ オジェ ブランドブラン ヴォーヴェルサン</span><span class="price">¥15,000</span></div><div class="item-detail">辛口 / シャルドネ100%。濃密で力強さを持ちながら繊細さも備えた味わい。</div></div>
+        <div class="item-row"><div class="item-header"><span>シャンパーニュ ロワイエ キュヴェ・ド・レゼルヴ ブリュット</span><span class="price">¥11,000</span></div><div class="item-detail">辛口 / 輝きのあるイエローゴールド。口に含むとリッチさが、そして円熟感が広がります。</div></div>
+        <div class="item-row"><div class="item-header"><span>アルザス・ヴォルクスハイム リースリング ジョセフ・シャルシュ</span><span class="price">¥7,500</span></div><div class="item-detail">香り豊かな辛口。デリケートな果実味はフレッシュ感があり軽やか、スッキリとした味わい。</div></div>
+        <div class="item-row"><div class="item-header"><span>アルザス ゲヴェ ルツトラミネール キュヴェ・マノン</span><span class="price">¥10,000</span></div><div class="item-detail">華やかなやや辛口。バラ、ライチ、蜂蜜、エキゾチックな香りもあり魅惑的。</div></div>
+        <div class="item-row"><div class="item-header"><span>ギュリヴェール ボルドーブラン</span><span class="price">¥5,000</span></div><div class="item-detail">スッキリ辛口。新鮮なフルーツ感と口当たりの良さを持つ。シトラスや白桃、ハーブの香り。</div></div>
+        <div class="item-row"><div class="item-header"><span>シャブリ シャトー・ド・フレイ</span><span class="price">¥10,000</span></div><div class="item-detail">キリッと辛口。キレ味のよい酸味と豊かなミネラル分。シャープでリッチな味わい。</div></div>
+        <div class="item-row"><div class="item-header"><span>ブルゴーニュ・シャルドネ ドゥヴネイ・マルス</span><span class="price">¥11,000</span></div><div class="item-detail">リッチな辛口。白い花、白桃、レモンなどのさわやかな芳香。ミネラリーでエレガント。</div></div>
+        <div class="item-row"><div class="item-header"><span>ムルソー・プルミエクリュ クリスチャン・ベラン</span><span class="price">¥28,000</span></div><div class="item-detail">華やかな辛口。果実の濃縮感とミネラル感のバランスが絶妙。余韻の上質フローラルも抜群。</div></div>
+        <div class="item-row"><div class="item-header"><span>ピエール・アントナン ソーヴィニヨンブラン</span><span class="price">¥5,500</span></div><div class="item-detail">やや辛口。シトラスやセージなどのハーブ、メロンのアロマが絡み合った複雑な香り。</div></div>
+        <div class="item-row"><div class="item-header"><span>テラス・ド-ギレム ヴィエイユ・ヴューニュ・ブラン</span><span class="price">¥4,400</span></div><div class="item-detail">すっきり辛口。良く熟した果実味、キレのある酸。ピーチやパイナップルの清涼感ある味わい。</div></div>
+        <div class="item-row"><div class="item-header"><span>プレジュジェ シャルドネ メゾン・ヴォントナック</span><span class="price">¥5,000</span></div><div class="item-detail">厚みのある辛口。ライチや薔薇などの活き活きとしたフレーヴァーにミネラル感。</div></div>
+        <div class="item-row"><div class="item-header"><span>テラス・ド・ギレム ヴィオニエ ムーラン・ド・ガサック</span><span class="price">¥5,000</span></div><div class="item-detail">厚みのある辛口。アプリコット、ピーチの熟した香りとフルーティーな甘さとキレ。</div></div>
+        <div class="item-row"><div class="item-header"><span>ミュスカデ・セーブル・エ・メーヌ シュルリー</span><span class="price">¥4,800</span></div><div class="item-detail">爽やかな辛口。レモン、グリーンアップル、シトラスの清らかな香り。爽快な飲み口。</div></div>
+        <div class="item-row"><div class="item-header"><span>プティブルジョワ・ソーヴィニヨンブラン アンリブルジョワ</span><span class="price">¥5,800</span></div><div class="item-detail">爽やかな辛口。柑橘類やハーブのアロマとフレッシュな果実味。</div></div>
+        <div class="item-row"><div class="item-header"><span>サンセール・ブラン フランソワ・クロシェ</span><span class="price">¥11,000</span></div><div class="item-detail">キリっと辛口。柑橘系果実の爽快な香りが心地よく、キリっとした酸が引き締めます。</div></div>
+        <div class="item-row"><div class="item-header"><span>ヴーヴレイ マルク・ブレディフ</span><span class="price">¥8,000</span></div><div class="item-detail">キリっと辛口。カリンや洋梨、蜂蜜、白い花をイメージさせる華やかな印象。</div></div>
+        <div class="item-row"><div class="item-header"><span>ヴァン・ド・サヴォワ アビーム フィリップ・ラヴィエ</span><span class="price">¥5,000</span></div><div class="item-detail">スッキリ辛口。青りんご・グレープフルーツ・ミラベルを想わせる香。シャープな仕上がり。</div></div>
 
         <h2>🔴 Vin Rouge (赤ワイン)</h2>
         <h3>おすすめの赤</h3>
         <div class="item-row">
             <div class="item-header"><span>オート・コート・ド・ニュイ・レ・プティ・コルヴェ 2022</span><span class="price">¥20,000</span></div>
-            <div class="spec-line">産地：フランス / 品種：ピノ・ノワール100% / ミディアムボディ</div>
-            <div class="item-detail">美しいルビーレッドの芳醇な味わい。黒果実の香り、ほのかなスパイスも感じられ、肉厚な味わいに、活き活きとした長い余韻の後味が続きます。</div>
+            <div class="spec-line">産地：フランス / ブルゴーニュ。品種：ピノ・ノワール100%。味わい：ミディアムボディ。</div>
+            <div class="item-detail">美しいルビーレッドの芳醇な味わい。黒果実の香り、ほのかなスパイスも感じられ、肉厚な味わいに、活き活きとした長い余韻の後味が続く。</div>
         </div>
         <div class="item-row">
             <div class="item-header"><span>ピノ・ノワール I.G.P ド・ラ・オート・マルス</span><span class="price">¥10,000</span></div>
-            <div class="spec-line">品種：ピノ・ノワール100%</div>
-            <div class="item-detail">芳しいラズベリーを思わせる香りと鮮やかな色合い。きめ細やかなタンニン。しっかりとした味わいがあり、シルキーで瑞々しく、酸味と果実味がなめらかに溶け込んでいます。</div>
+            <div class="item-detail">ピノ・ノワール100%。芳しいラズベリーを思わせる香り。鮮やかな色合い。きめ細やかなタンニン。充分しっかりとした味わいがあり、シルキーで、瑞々しい味わい。</div>
         </div>
         <div class="item-row">
-            <div class="item-header"><span>コート・デュ・ローヌ ヴァルヴィニエール</span><span class="price">¥8,000</span></div>
-            <div class="spec-line">品種：有機シラー100%</div>
-            <div class="item-detail">本来サン・ジョセフの畑の区画の葡萄をセレクション。深く広がる味わい、適度なボリューム感。果実味が豊富で充実しています。抑制のきいた旨みが様々なお食事によくあいます。</div>
+            <div class="item-header"><span>コート・デュ・ローヌ ヴァルヴィニエール (アントニー・パレ)</span><span class="price">¥8,000</span></div>
+            <div class="item-detail">有機シラー100%。サン・ジョセフの畑の区画。深く広がる味わい、適度なボリューム感。果実味が豊富で充実しています。バランスが良く、抑制のきいた旨みが魅力。</div>
         </div>
 
         <h3>赤ワイン詳細リスト</h3>
-        <div class="item-row">
-            <div class="item-header"><span>ギュリヴェール ボルドールージュ</span><span class="price">¥6,500</span></div>
-            <div class="item-header"><span>ル・オーメドック ド ジスクール</span><span class="price">¥9,800</span></div>
-            <div class="item-header"><span>シャトー ル・タンプル クリュ・ブルジョワ</span><span class="price">¥11,000</span></div>
-            <div class="item-header"><span>パヴィヨン・ド・レオヴィルポワフィレ</span><span class="price">¥18,000</span></div>
-            <div class="item-header"><span>ブルゴーニュ・ピノノワール 2021 ドゥヴネイ・マルス</span><span class="price">¥9,900</span></div>
-            <div class="item-header"><span>シャンソン ブルゴーニュ ピノ・ノワール</span><span class="price">¥12,000</span></div>
-            <div class="item-header"><span>サヴィニ・レ・ヴォーヌ クリュションド</span><span class="price">¥14,000</span></div>
-            <div class="item-header"><span>ピュイ・ド・ドーム ピノノワール</span><span class="price">¥6,500</span></div>
-            <div class="item-header"><span>コート・デュ・ローヌ ビュルル</span><span class="price">¥5,800</span></div>
-            <div class="item-header"><span>クローズ・エルミタージュ ジャン・ルイ・シャーヴ</span><span class="price">¥11,000</span></div>
-            <div class="item-header"><span>シノン レ・シェーヌ ドーメヌ・ド・ラ・ノブレ</span><span class="price">¥9,000</span></div>
-            <div class="item-header"><span>ヴァロンブロッサ キュヴェ・プリュネル ルージュ</span><span class="price">¥7,000</span></div>
-            <div class="item-header"><span>アルザス ピノノワール ジョセフ・シャルシュ</span><span class="price">¥9,000</span></div>
-            <div class="item-header"><span>リディオ・メルロー メゾン・ヴォントナック</span><span class="price">¥4,900</span></div>
-            <div class="item-header"><span>ヴィニウス オーガニック カベルネ／メルロー</span><span class="price">¥3,800</span></div>
-            <div class="item-header"><span>ル・パリア グルナッシュ メゾン・ヴォントナック</span><span class="price">¥4,900</span></div>
-            <div class="item-header"><span>ラ・ガリネット ガリー</span><span class="price">¥4,500</span></div>
-            <div class="item-header"><span>テラス・ド・ギレム V.V ルージュ</span><span class="price">¥4,200</span></div>
-            <div class="item-header"><span>ジャン・マルク・ラファージュ キュヴェ・ニコラ</span><span class="price">¥5,800</span></div>
-            <div class="item-header"><span>ラントリュ メゾン・ヴォントナック</span><span class="price">¥4,900</span></div>
-        </div>
+        <div class="item-row"><div class="item-header"><span>ギュリヴェール ボルドールージュ</span><span class="price">¥6,500</span></div><div class="item-detail">ミディアムボディ。軽やかな果実。しっかりとした味わい深さ、深みを感じるワイン。</div></div>
+        <div class="item-row"><div class="item-header"><span>ル・オーメドック ド ジスクール</span><span class="price">¥9,800</span></div><div class="item-detail">フルボディ。豊かな果実味と美しいアロマ。ジスクール譲りの明快でおおらかな味わい。</div></div>
+        <div class="item-row"><div class="item-header"><span>シャトー ル・タンプル クリュ・ブルジョワ</span><span class="price">¥11,000</span></div><div class="item-detail">フルボディ。新樽由来のバニラやトースト、蜂蜜の甘い香り。リッチな果実味。</div></div>
+        <div class="item-row"><div class="item-header"><span>パヴィヨン・ド-レオヴィルポワフィレ</span><span class="price">¥18,000</span></div><div class="item-detail">フルボディ。強い果実とタンニンのバランスが良い。レオヴィル・ポワフェレのセカンド。</div></div>
+        <div class="item-row"><div class="item-header"><span>ブルゴーニュ・ピノノワール 2021 ドゥヴネイ・マルス</span><span class="price">¥9,900</span></div><div class="item-detail">ライトボディ。エレガントで上品な果実味の中に、適度なボリューム感。繊細な酸。</div></div>
+        <div class="item-row"><div class="item-header"><span>シャンソン ブルゴーニュ ピノ・ノワール</span><span class="price">¥12,000</span></div><div class="item-detail">ミディアムボディ。ベリー系のエレガントな果実。程よい酸と果実味のバランス。</div></div>
+        <div class="item-row"><div class="item-header"><span>サヴィニ・レ・ヴォーヌ クリュションド</span><span class="price">¥14,000</span></div><div class="item-detail">ミディアムボディ。カシスやブラックベリー、グリオットなどの果実の凝縮した香り。</div></div>
+        <div class="item-row"><div class="item-header"><span>ピュイ・ド・ドーム ピノノワール カーヴ・ド・サンヴェルニ</span><span class="price">¥6,500</span></div><div class="item-detail">ミディアムボディ。ピノノワールならではのエレガントな丸みと柔らかさ、奥行き。</div></div>
+        <div class="item-row"><div class="item-header"><span>コート・デュ・ローヌ ビュルル</span><span class="price">¥5,800</span></div><div class="item-detail">フルボディ。エレガントなベリー、よく熟したチェリー、スパイスの複雑な香り。滑らか。</div></div>
+        <div class="item-row"><div class="item-header"><span>クローズ・エルミタージュ ジャン・ルイ・シャーヴ セレクション</span><span class="price">¥11,000</span></div><div class="item-detail">フルボディ。ベリー系のジャム、スパイシー。とろけるような果実味でシラーの柔らかい風味。</div></div>
+        <div class="item-row"><div class="item-header"><span>シノン レ・シェーヌ ドーメヌ・ド・ラ・ノブレ</span><span class="price">¥9,000</span></div><div class="item-detail">ミディアムボディ。若々しく果実味豊か。しなやかで優美なワインです。</div></div>
+        <div class="item-row"><div class="item-header"><span>ヴァロンブロッサ キュヴェ・プリュネル ルージュ</span><span class="price">¥7,000</span></div><div class="item-detail">フルボディ。赤い果物を思わせる新鮮さに引き立てられた、力強い香り。</div></div>
+        <div class="item-row"><div class="item-header"><span>アルザス ピノノワール ジョセフ・シャルシュ</span><span class="price">¥9,000</span></div><div class="item-detail">ミディアムボディ。上質なブルゴーニュを思わせる洗練された果実味と酸のバランス。</div></div>
+        <div class="item-row"><div class="item-header"><span>リディオ・メルロー メゾン・ヴォントナック</span><span class="price">¥4,900</span></div><div class="item-detail">ミディアムボディ。ブラックカラントのジャム、チェリーの香りに樽のニュアンス。</div></div>
+        <div class="item-row"><div class="item-header"><span>ヴィニウス オーガニック カベルネ／メルロー</span><span class="price">¥3,800</span></div><div class="item-detail">フルボディ。ブラックチェリーの凝縮された果実香、胡椒などのスパイス。熟れた果実味。</div></div>
+        <div class="item-row"><div class="item-header"><span>ル・パリア グルナッシュ メゾン・ヴォントナック</span><span class="price">¥4,900</span></div><div class="item-detail">フルボディ。柔らかいタンニンに赤い果実のニュアンス。スパイシー。</div></div>
+        <div class="item-row"><div class="item-header"><span>ラ・ガリネット ガリー</span><span class="price">¥4,500</span></div><div class="item-detail">フルボディ。ドライフルーツなどの紫の果実、野生のハーブ、スパイシー。</div></div>
+        <div class="item-row"><div class="item-header"><span>テラス・ド・ギレム V.V ルージュ</span><span class="price">¥4,200</span></div><div class="item-detail">ミディアムボディ。程よいタンニンとスパイシーなニュアンス。とても優しい果実味。</div></div>
+        <div class="item-row"><div class="item-header"><span>ジャン・マルク・ラファージュ キュヴェ・ニコラ</span><span class="price">¥5,800</span></div><div class="item-detail">フルボディ。果実の凝縮感を惜しみなく感じることができます。余韻に複雑さ。</div></div>
+        <div class="item-row"><div class="item-header"><span>ラントリュ メゾン・ヴォントナック</span><span class="price">¥4,900</span></div><div class="item-detail">フルボディ。ラズベリーやプラムが豊富で柔らかくシルキー。洗練された果実味。</div></div>
 
-        <h2>👨‍🍳 シェフのこだわりセレクション (特別リスト)</h2>
+        <h2>👨‍🍳 シェフのこだわりセレクション</h2>
         <div class="item-row">
-            <div class="item-header"><span>シャブリ プルミエクリュ モンテ・ド・トネル</span><span class="price">¥35,000</span></div>
+            <div class="item-header"><span>シャブリ プルミエクリュ モンテ・ド・トネル (マルセル・セルヴァン)</span><span class="price">¥35,000</span></div>
             <div class="spec-line">品種：シャルドネ100% / 平均38年樹齢</div>
-            <div class="item-detail">1erの畑では「最も洗練された最高の畑」との呼び声高い銘醸畑。はっきりとしたミネラル、豊潤さのあるフルーツ・フレーバーが特徴です。</div>
+            <div class="item-detail">グラン・クリュ級の畑から道を挟んですぐ。はっきりとしたミネラル、豊潤さのある最高峰の1er。</div>
         </div>
         <div class="item-row">
             <div class="item-header"><span>ムルソー カス・テット (シャヴィ・シュエ)</span><span class="price">¥50,000</span></div>
-            <div class="spec-line">品種：シャルドネ100% / 45年樹齢 / 12か月樽熟成</div>
-            <div class="item-detail">集中力がありパワフルで活気がある。ムルソーの多面的なテロワールの性格がにじみ出ている、優雅で多層的な味わい。</div>
+            <div class="spec-line">品種：シャルドネ100% / 45年樹齢</div>
+            <div class="item-detail">集中力がありパワフル。香りも味わいも多層的。優雅さがあり、ムルソーのテロワールがにじみ出ています。</div>
+        </div>
+        <div class="item-row">
+            <div class="item-header"><span>ブルゴーニュ ピノ・ノワール (フェルナン＆ローラン・ピヨ)</span><span class="price">¥25,000</span></div>
+            <div class="item-detail">明るく美しい色合い。しっとりと、なめらかな上質な味わい。繊細でスムース、赤身の鳥獣肉に最高。</div>
         </div>
         <div class="item-row">
             <div class="item-header"><span>サン・ジョセフ 420 ニュイ (アントニー・パレ)</span><span class="price">¥30,000</span></div>
-            <div class="spec-line">品種：シラー100% / 有機栽培 / 年産6000本限定</div>
-            <div class="item-detail">420日の夜を樽で過ごした限定品。エレガンスの極地とも言えるこのワインは、しみじみとした旨みと果実味が口の中に広がります。</div>
+            <div class="spec-line">品種：シラー100% / 有機栽培 / 年産6000本のみ</div>
+            <div class="item-detail">420日の夜を樽で過ごした限定品。まろやかで上品、エレガンスの極地。しみじみとした旨みが広がります。</div>
         </div>
         <div class="item-row">
             <div class="item-header"><span>マルゴー (クロ・デュ・ジョゲイロン)</span><span class="price">¥45,000</span></div>
-            <div class="spec-line">品種：CS75%, メルロー20%, CF5% / 年産6800本</div>
-            <div class="item-detail">フレッシュな黒系果実にプラムのコンポート、スパイス。非常に細やかなタンニン。時間の経過で現れるモカやバニラの甘いニュアンスが素晴らしい。</div>
+            <div class="spec-line">CS75%, メルロー20%, CF5%</div>
+            <div class="item-detail">滑らかな口当たりにプラムのコンポートやバニラの甘さを伴うニュアンス。非常に細やかなタンニンが素晴らしい。</div>
         </div>
         <div class="item-row">
-            <div class="item-header"><span>ジュヴレ・シャンベルタン プルミエ・クリュ</span><span class="price">¥50,000</span></div>
-            <div class="spec-line">品種：ピノ・ノワール100%</div>
-            <div class="item-detail">清々しい深い森の印象。複雑な香りが次々と現れ、きれいな果実味としっかりとした骨格。気品ある余韻が残る名品。</div>
+            <div class="item-header"><span>ジュヴレ・シャンベルタン プルミエ・クリュ (フィリップ・ロシニョール)</span><span class="price">¥50,000</span></div>
+            <div class="item-detail">すがすがしい深い森の印象。きれいな果実味が非常にエレガント。しっかりとした骨格と気品ある余韻。</div>
         </div>
 
         <h2>🥃 Digestif (食後酒)</h2>
-        <div class="item-row">
-            <div class="item-header"><span>マール・ド・ブルゴーニュ / マール・ド・シャンパーニュ</span><span class="price">各 ¥3,000</span></div>
-            <div class="item-header"><span>グラッパ・ディ・サッシカイア</span><span class="price">¥2,000</span></div>
-            <div class="item-header"><span>シェリー ペドロヒメネス / マンサニージャ</span><span class="price">各 ¥2,000</span></div>
-            <div class="item-header"><span>バーベイトマデイラ10年</span><span class="price">¥1,000</span></div>
-            <div class="item-header"><span>ウイスキー 白州 / バランタイン12年</span><span class="price">各 ¥1,500</span></div>
-            <div class="item-header"><span>ブランデー クルボアジェ</span><span class="price">¥2,000</span></div>
-        </div>
+        <div class="item-row"><div class="item-header"><span>マール・ド・ブルゴーニュ</span><span class="price">¥3,000</span></div></div>
+        <div class="item-row"><div class="item-header"><span>モエ・シャンドン マール・ド・シャンパーニュ</span><span class="price">¥3,000</span></div></div>
+        <div class="item-row"><div class="item-header"><span>グラッパ・ディ・サッシカイア</span><span class="price">¥2,000</span></div></div>
+        <div class="item-row"><div class="item-header"><span>シェリー ペドロヒメネス (甘口)</span><span class="price">¥2,000</span></div></div>
+        <div class="item-row"><div class="item-header"><span>シェリー マンサニージャ (辛口)</span><span class="price">¥2,000</span></div></div>
+        <div class="item-row"><div class="item-header"><span>バーベイトマデイラ10年</span><span class="price">¥1,000</span></div></div>
+        <div class="item-row"><div class="item-header"><span>ウイスキー 白州</span><span class="price">¥1,500</span></div></div>
+        <div class="item-row"><div class="item-header"><span>ウイスキー バランタイン12年</span><span class="price">¥1,500</span></div></div>
+        <div class="item-row"><div class="item-header"><span>ブランデー クルボアジェ</span><span class="price">¥2,000</span></div></div>
 
         <footer>
             <a href="index.html" class="back-link">トップページへ戻る</a>
