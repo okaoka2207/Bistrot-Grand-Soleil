@@ -6,162 +6,182 @@
     <title>Bistro Grand Soleil | ビストログランソレーユ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* --- サイト共通デザインルール --- */
         :root { 
-            /* 山吹色・太陽をイメージした配色に変更 */
-            --sun-yellow: #F8B500; 
-            --sun-orange: #EE7800;
-            --deep-brown: #3C2A21; 
-            --bg-cream: #FFFEF9; 
+            --sun-gold: #F8B500;    /* 山吹色：太陽の輝き */
+            --deep-brown: #3C2A21;  /* 焦げ茶：重厚感 */
+            --bg-cream: #FFFEF9;    /* 背景：柔らかな白 */
             --text-main: #333; 
         }
-        body { margin: 0; font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", sans-serif; background-color: var(--bg-cream); color: var(--text-main); line-height: 1.8; }
-        
-        /* ナビゲーション追加 */
-        nav {
-            background: white;
-            padding: 15px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+        body { 
+            margin: 0; 
+            font-family: "Georgia", "Hiragino Mincho ProN", serif; /* 明朝体で統一 */
+            background-color: var(--bg-cream); 
+            color: var(--text-main); 
+            line-height: 1.8; 
         }
-        nav a {
-            text-decoration: none;
-            color: var(--deep-brown);
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 0.9rem;
+
+        /* --- ナビゲーション --- */
+        nav { 
+            background: white; 
+            padding: 15px 0; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: var(--deep-brown); 
+            margin: 0 15px; 
+            font-weight: bold; 
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
             transition: 0.3s;
         }
-        nav a:hover { color: var(--sun-orange); }
+        nav a:hover { color: var(--sun-gold); }
 
+        /* --- ヒーローセクション --- */
         header { 
-            height: 65vh; 
+            height: 75vh; 
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
             url('iriguti.jpg') center/cover; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            color: white; text-align: center; 
+        }
+        .logo-img {
+            max-width: 280px; /* ロゴのサイズに合わせて調整してください */
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
         }
 
-        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
-        h2 { text-align: center; color: var(--deep-brown); border-bottom: 3px solid var(--sun-yellow); display: inline-block; margin-bottom: 40px; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 5px; }
-        
-        .menu-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .menu-box { background: white; padding: 25px; border-top: 5px solid var(--sun-yellow); box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; }
-        .menu-item { display: flex; justify-content: space-between; font-weight: bold; border-bottom: 1px dotted #ccc; margin-bottom: 5px; }
-        .course-item { margin-bottom: 25px; }
-        .course-item small { display: block; color: #666; font-size: 0.85rem; line-height: 1.6; padding-left: 10px; border-left: 2px solid var(--sun-yellow); margin-top: 5px; }
-        
-        /* トピックス・ギャラリーへのボタン */
-        .sub-nav-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-        .nav-card { background: white; padding: 30px; text-align: center; border-radius: 10px; text-decoration: none; color: var(--deep-brown); box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
-        .nav-card i { font-size: 2rem; color: var(--sun-yellow); margin-bottom: 15px; display: block; }
-        .nav-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); border-color: var(--sun-yellow); }
+        /* --- セクション共通 --- */
+        section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
+        h2 { 
+            text-align: center; font-size: 2.2rem; color: var(--deep-brown); 
+            margin-bottom: 60px; font-weight: normal; font-style: italic;
+        }
+        h2::after {
+            content: ""; display: block; width: 40px; height: 2px; 
+            background: var(--sun-gold); margin: 15px auto 0;
+        }
 
-        .tel-btn { display: inline-block; padding: 15px 40px; background-color: var(--sun-yellow); color: white; text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer; }
-        .tel-btn:hover { background-color: var(--sun-orange); }
+        /* --- メニューカード --- */
+        .menu-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .menu-box { 
+            background: white; padding: 40px; 
+            border: 1px solid #eee; border-radius: 2px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+        .menu-box h3 { 
+            text-align: center; border-bottom: 1px solid #f0f0f0; 
+            padding-bottom: 20px; margin-bottom: 30px; color: var(--deep-brown);
+        }
+        .course-item { margin-bottom: 30px; }
+        .menu-item { display: flex; justify-content: space-between; font-weight: bold; color: var(--deep-brown); }
+        .course-item small { display: block; color: #777; font-size: 0.85rem; margin-top: 5px; }
+
+        /* --- リンクボタン --- */
+        .action-btn { 
+            display: inline-block; padding: 15px 40px; 
+            background-color: var(--deep-brown); color: white; 
+            text-decoration: none; font-size: 0.9rem; letter-spacing: 0.1em;
+            transition: 0.3s; margin-top: 30px;
+        }
+        .action-btn:hover { background-color: var(--sun-gold); }
+
+        /* --- インフォメーション --- */
+        .info-box { text-align: center; background: white; padding: 60px; border: 1px solid #eee; }
+        .tel-number { font-size: 2.2rem; font-weight: bold; color: var(--deep-brown); text-decoration: none; display: block; margin: 20px 0; }
 
         @media (max-width: 768px) { 
-            .menu-container, .sub-nav-container { grid-template-columns: 1fr; } 
-            header h1 { font-size: 2.2rem !important; }
+            .menu-container { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.5rem !important; }
         }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="#menu">Menu</a>
+        <a href="index.html">Home</a>
         <a href="topics.html">Topics</a>
         <a href="gallery.html">Gallery</a>
+        <a href="menu.html">Drinks & Wine</a>
         <a href="#access">Access</a>
     </nav>
 
     <header>
-        <h1 style="font-size: 3.5rem; margin-bottom: 0; letter-spacing: 2px;">Bistro Grand Soleil</h1>
-        <p style="font-size: 1.2rem; font-weight: 300;">熊本・自衛隊通り近く 旬を愉しむフランス料理</p>
+        <h1 style="font-size: 3.5rem; margin: 0; letter-spacing: 3px;">Bistro Grand Soleil</h1>
+        <p style="font-size: 1.1rem; letter-spacing: 0.2em; margin-top: 10px;">Grandit sous le soleil de Kumamoto</p>
     </header>
 
     <section id="menu">
         <h2>Course Menu</h2>
-        <p style="text-align: center; font-weight: bold; color: var(--deep-brown); margin-top: -20px; margin-bottom: 40px;">
-            <i class="fas fa-bread-slice" style="color: var(--sun-orange);"></i> すべてのコースにパン、おかわり自由
+        <p style="text-align: center; font-weight: bold; margin-bottom: 50px; color: var(--sun-gold);">
+            <i class="fas fa-bread-slice"></i> すべてのコースでパンをおかわり自由でお楽しみいただけます
         </p>
 
         <div class="menu-container">
             <div class="menu-box">
-                <h3 style="color: var(--deep-brown); text-align: center; margin-bottom: 25px;"><i class="fas fa-sun" style="color: var(--sun-yellow);"></i> Lunch Course</h3>
+                <h3>Lunch Course</h3>
                 <div class="course-item">
-                    <div class="menu-item"><span>Aコース</span><span>¥3,000</span></div>
+                    <div class="menu-item"><span>Course A</span><span>¥3,000</span></div>
                     <small>アミューズ / スープ / 本日のメイン / デザート / コーヒー</small>
                 </div>
                 <div class="course-item">
-                    <div class="menu-item"><span>Bコース</span><span>¥4,000</span></div>
+                    <div class="menu-item"><span>Course B</span><span>¥4,000</span></div>
                     <small>オードブル盛り合わせ / スープ / 本日のメイン / デザート / コーヒー</small>
                 </div>
                 <div class="course-item">
-                    <div class="menu-item"><span>Cコース (フルコース)</span><span>¥10,000</span></div>
-                    <small>お客様のご要望に合わせた特別フルコース</small>
+                    <div class="menu-item"><span>Specialite</span><span>¥10,000</span></div>
+                    <small>シェフお任せのフルコース（要予約）</small>
                 </div>
             </div>
 
             <div class="menu-box">
-                <h3 style="color: var(--deep-brown); text-align: center; margin-bottom: 25px;"><i class="fas fa-moon" style="color: #5d4037;"></i> Dinner Course</h3>
+                <h3>Dinner Course</h3>
                 <div class="course-item">
-                    <div class="menu-item"><span>Aコース</span><span>¥5,000</span></div>
+                    <div class="menu-item"><span>Course A</span><span>¥5,000</span></div>
                     <small>アミューズ / オードブル / 本日のメイン / デザート / コーヒー</small>
                 </div>
                 <div class="course-item">
-                    <div class="menu-item"><span>Bコース</span><span>¥6,500</span></div>
+                    <div class="menu-item"><span>Course B</span><span>¥6,500</span></div>
                     <small>アミューズ / オードブル盛り合わせ / スープ / 本日のメイン / デザート / コーヒー</small>
                 </div>
                 <div class="course-item">
-                    <div class="menu-item"><span>Cコース (フルコース)</span><span>¥10,000</span></div>
-                    <small>アミューズ / オードブル / スープ / 魚料理 / お口直し / 肉料理 / デザート / コーヒー</small>
+                    <div class="menu-item"><span>Gastronomie</span><span>¥10,000</span></div>
+                    <small>旬の味覚を詰め込んだ至高のフルコース</small>
                 </div>
             </div>
         </div>
 
-        <div class="sub-nav-container">
-            <a href="topics.html" class="nav-card">
-                <i class="fas fa-leaf"></i>
-                <strong>Topics</strong>
-                <p style="font-size: 0.8rem; margin: 5px 0 0;">今月の旬食材と料理紹介</p>
-            </a>
-            <a href="gallery.html" class="nav-card">
-                <i class="fas fa-camera-retro"></i>
-                <strong>Gallery</strong>
-                <p style="font-size: 0.8rem; margin: 5px 0 0;">料理・店内の風景</p>
-            </a>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="menu.html" class="tel-btn" style="background: var(--deep-brown);">
-                <i class="fas fa-wine-glass-alt"></i> ドリンク・ワインリスト詳細
-            </a>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="menu.html" class="action-btn">View Wine List</a>
         </div>
     </section>
 
-    <section id="access" style="background-color: white;">
+    <section id="access">
         <h2>Information & Access</h2>
-        <div class="info-box" style="text-align: center; box-shadow: none; padding: 0;">
-            <div style="margin-bottom: 30px;">
-                <p><i class="fas fa-map-marker-alt" style="color: var(--sun-orange);"></i> <strong>住所</strong></p>
-                <p>〒862-0908 熊本県熊本市東区新生２丁目２−１０</p>
-            </div>
-            <div style="margin-bottom: 30px;">
-                <p><i class="fas fa-clock" style="color: var(--sun-orange);"></i> <strong>営業時間</strong></p>
-                <p>ランチ：11:00 〜 14:30 (L.O. 14:00)<br>
-                   ディナー：17:00 〜 22:00 (L.O. 21:00)</p>
-            </div>
-            <div style="margin-bottom: 30px;">
-                <p><i class="fas fa-phone-alt" style="color: var(--sun-orange);"></i> <strong>ご予約・お問い合わせ</strong></p>
-                <a href="tel:096-377-8228" style="font-size: 2rem; font-weight: bold; color: var(--deep-brown); text-decoration: none;">096-377-8228</a>
-            </div>
+        <div class="info-box">
+            <p><i class="fas fa-map-marker-alt"></i> <strong>ADRESS</strong></p>
+            <p>〒862-0908 熊本県熊本市東区新生２丁目２−１０</p>
+            
+            <p style="margin-top: 40px;"><i class="fas fa-clock"></i> <strong>OPEN</strong></p>
+            <p>Lunch 11:00 - 14:30 (L.O. 14:00)<br>Dinner 17:00 - 22:00 (L.O. 21:00)</p>
+            <p style="font-size: 0.85rem; color: var(--sun-gold);">※不定休（完全予約制のため、事前にお問い合わせください）</p>
+
+            <p style="margin-top: 40px;"><i class="fas fa-phone-alt"></i> <strong>RESERVATION</strong></p>
+            <a href="tel:096-377-8228" class="tel-number">096-377-8228</a>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 60px 40px; font-size: 0.8rem; color: #888; background: var(--bg-cream);">
-        <p style="margin-bottom: 10px;">Bistro Grand Soleil</p>
+    <footer style="text-align: center; padding: 80px 20px; border-top: 1px solid #eee; font-size: 0.8rem; color: #888;">
+        <p style="letter-spacing: 2px;">Bistro Grand Soleil</p>
         © 2026 Bistro Grand Soleil
     </footer>
+
 </body>
 </html>
