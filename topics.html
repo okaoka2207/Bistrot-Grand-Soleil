@@ -1,119 +1,159 @@
-<style>
-    /* 追加・修正するスタイル */
-    :root {
-        --sun-gold: #F8B500;
-        --deep-brown: #3C2A21;
-        --soft-white: #FFFEF9;
-        --light-gray: #f4f4f4;
-    }
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics | Bistro Grand Soleil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --sun-gold: #F8B500; 
+            --deep-brown: #3C2A21; 
+            --bg-cream: #FFFEF9; 
+            --text-main: #333; 
+        }
+        
+        /* フォント設定：明朝体系で高級感を演出 */
+        body { 
+            margin: 0; 
+            font-family: "Georgia", "Hiragino Mincho ProN", serif; 
+            background-color: var(--bg-cream); 
+            color: var(--text-main); 
+            line-height: 1.8; 
+        }
 
-    body { font-family: "Georgia", "Hiragino Mincho ProN", serif; /* 明朝体で高級感を */ }
+        /* ナビゲーション：しっかり目立たせて「戻れる」ように */
+        nav { 
+            background: white; 
+            padding: 20px 0; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: var(--deep-brown); 
+            margin: 0 15px; 
+            font-weight: bold; 
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--sun-gold); }
 
-    .topics-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 100px 20px;
-    }
+        /* ページヘッダー：ダサさを消すために余白を大胆に取る */
+        .topics-header { 
+            padding: 100px 20px 60px; 
+            text-align: center; 
+            background: #fff;
+        }
+        .topics-header h1 { 
+            font-size: 2.8rem; 
+            color: var(--deep-brown); 
+            margin: 0; 
+            font-style: italic; 
+            letter-spacing: 0.1em;
+        }
+        .topics-header p { 
+            font-size: 1rem; 
+            color: var(--sun-gold); 
+            margin-top: 10px;
+            letter-spacing: 0.2em;
+        }
 
-    /* 記事ごとのレイアウト */
-    .topic-item {
-        display: flex;
-        align-items: center;
-        gap: 60px;
-        margin-bottom: 120px;
-    }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 
-    /* 記事を交互に左右反転させる */
-    .topic-item:nth-child(even) {
-        flex-direction: row-reverse;
-    }
+        /* マガジン風レイアウト */
+        .topic-item {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 120px;
+        }
+        .topic-item:nth-child(even) { flex-direction: row-reverse; }
 
-    .topic-img-wrapper {
-        flex: 1;
-        position: relative;
-    }
+        .topic-img-wrapper { flex: 1.2; position: relative; }
+        .topic-img-wrapper img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            /* 山吹色のアクセントライン */
+            box-shadow: 15px 15px 0px var(--sun-gold);
+        }
 
-    .topic-img-wrapper img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        box-shadow: 20px 20px 0px var(--sun-gold); /* 山吹色のアクセントライン */
-    }
+        .topic-text { flex: 1; }
+        .topic-date { font-size: 0.8rem; color: #999; letter-spacing: 0.1em; }
+        .topic-text h2 { 
+            font-size: 1.8rem; 
+            color: var(--deep-brown); 
+            margin: 15px 0 25px; 
+            line-height: 1.4;
+            font-weight: normal;
+        }
+        .topic-text p { font-size: 0.95rem; color: #555; text-align: justify; }
 
-    .topic-text {
-        flex: 1;
-        padding: 20px;
-    }
+        footer { text-align: center; padding: 80px 20px; color: #888; background: #fff; border-top: 1px solid #eee; }
 
-    .topic-category {
-        font-size: 0.8rem;
-        letter-spacing: 0.3em;
-        color: var(--sun-gold);
-        text-transform: uppercase;
-        display: block;
-        margin-bottom: 15px;
-    }
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+            .topic-item, .topic-item:nth-child(even) { flex-direction: column; gap: 40px; }
+            .topic-img-wrapper img { height: 300px; box-shadow: 10px 10px 0px var(--sun-gold); }
+            .topics-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
 
-    .topic-text h2 {
-        font-size: 2rem;
-        font-weight: normal;
-        margin: 0 0 30px 0;
-        line-height: 1.4;
-        border: none; /* 下線を消してスッキリ */
-        left: 0; transform: none; /* indexのスタイルを打ち消し */
-    }
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="index.html#menu">COURSE</a>
+        <a href="topics.html" style="border-bottom: 2px solid var(--sun-gold);">TOPICS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="menu.html">DRINKS</a>
+        <a href="index.html#access">ACCESS</a>
+    </nav>
 
-    .topic-text p {
-        font-size: 1rem;
-        color: #555;
-        text-align: justify;
-        line-height: 2;
-    }
+    <div class="topics-header">
+        <h1>Season's Topics</h1>
+        <p>旬の食材と料理の物語</p>
+    </div>
 
-    /* 装飾的な数字（01, 02...） */
-    .topic-number {
-        font-size: 4rem;
-        color: rgba(248, 181, 0, 0.1);
-        font-family: 'Times New Roman', serif;
-        position: absolute;
-        top: -40px;
-        left: -20px;
-    }
+    <div class="container">
+        <article class="topic-item">
+            <div class="topic-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800" alt="阿蘇赤牛">
+            </div>
+            <div class="topic-text">
+                <span class="topic-date">February 2026</span>
+                <h2>阿蘇の草原が育む、<br>赤牛の深い味わい</h2>
+                <p>
+                    熊本・阿蘇の雄大な自然の中で育った赤牛は、ヘルシーでありながら赤身の旨みが非常に強いのが特徴です。<br><br>
+                    今月は、この赤牛を贅沢に厚切りし、薪火で焼き上げたような香ばしさを纏わせた一皿をご用意しました。熟成された赤ワインソースと共に、五感で味わう熊本の恵みをご堪能ください。
+                </p>
+            </div>
+        </article>
 
-    @media (max-width: 768px) {
-        .topic-item, .topic-item:nth-child(even) { flex-direction: column; gap: 30px; }
-        .topic-img-wrapper img { height: 300px; box-shadow: 10px 10px 0px var(--sun-gold); }
-    }
-</style>
+        <article class="topic-item">
+            <div class="topic-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1590004953392-5aba2e786369?auto=format&fit=crop&w=800" alt="季節のデザート">
+            </div>
+            <div class="topic-text">
+                <span class="topic-date">February 2026</span>
+                <h2>早春の香りを運ぶ、<br>完熟苺のデセール</h2>
+                <p>
+                    熊本県産の瑞々しい苺を主役にした、今月限定のデザートです。苺の甘酸っぱさを引き立てる滑らかなホワイトチョコのムースと、ピスタチオの香ばしいアクセント。<br><br>
+                    コースの最後を締めくくる、春の陽だまりのような温かみを感じるひとときをお楽しみください。
+                </p>
+            </div>
+        </article>
+    </div>
 
-<div class="topics-container">
-    <article class="topic-item">
-        <div class="topic-img-wrapper">
-            <span class="topic-number">01</span>
-            <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800" alt="阿蘇赤牛">
-        </div>
-        <div class="topic-text">
-            <span class="topic-category">Viande du Mois</span>
-            <h2>阿蘇の草原が育む、<br>赤牛の深い味わい</h2>
-            <p>
-                熊本が世界に誇る阿蘇の赤牛。広大な自然の中でストレスなく育ったその身は、繊細なサシと力強い赤身の旨みが共存しています。<br><br>
-                当店では、この厳選された部位を低温でじっくりと焼き上げ、仕上げに熟成されたマデラワインのソースを添えてお届けします。地元の恵みへの敬意を込めた一皿です。
-            </p>
-        </div>
-    </article>
+    <footer>
+        <p style="letter-spacing: 2px; margin-bottom: 10px;">Bistro Grand Soleil</p>
+        <small>© 2026 Bistro Grand Soleil</small>
+    </footer>
 
-    <article class="topic-item">
-        <div class="topic-img-wrapper">
-            <span class="topic-number">02</span>
-            <img src="https://images.unsplash.com/photo-1590004953392-5aba2e786369?auto=format&fit=crop&w=800" alt="季節のデザート">
-        </div>
-        <div class="topic-text">
-            <span class="topic-category">Dessert Saison</span>
-            <h2>早春の香りを運ぶ、<br>完熟苺のプレジール</h2>
-            <p>
-                熊本県産の瑞々しい苺を主役にした、今月限定のデセール。苺の酸味を引き立てるホワイトチョコのムースと、ピスタチオの香ばしいアクセントが口の中で溶け合います。
-                コースの締めくくりに、春の陽だまりのような温かみを感じるひとときを。
-            </p>
-        </div>
-    </article>
-</div>
+</body>
+</html>
