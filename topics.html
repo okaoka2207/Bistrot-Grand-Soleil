@@ -6,14 +6,14 @@
     <title>Topics | Bistro Grand Soleil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* --- ブランド共通デザインルール --- */
         :root { 
             --sun-gold: #F8B500; 
             --deep-brown: #3C2A21; 
             --bg-cream: #FFFEF9; 
             --text-main: #333; 
         }
-        
-        /* フォント設定：明朝体系で高級感を演出 */
+
         body { 
             margin: 0; 
             font-family: "Georgia", "Hiragino Mincho ProN", serif; 
@@ -22,10 +22,10 @@
             line-height: 1.8; 
         }
 
-        /* ナビゲーション：しっかり目立たせて「戻れる」ように */
+        /* --- ナビゲーション（他ページと完全統一） --- */
         nav { 
             background: white; 
-            padding: 20px 0; 
+            padding: 15px 0; 
             text-align: center; 
             position: sticky; 
             top: 0; 
@@ -37,27 +37,29 @@
             color: var(--deep-brown); 
             margin: 0 15px; 
             font-weight: bold; 
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
             transition: 0.3s;
         }
         nav a:hover { color: var(--sun-gold); }
 
-        /* ページヘッダー：ダサさを消すために余白を大胆に取る */
+        /* --- トピックス用レイアウト --- */
         .topics-header { 
-            padding: 100px 20px 60px; 
+            padding: 80px 20px 40px; 
             text-align: center; 
             background: #fff;
         }
         .topics-header h1 { 
-            font-size: 2.8rem; 
+            font-size: 2.5rem; 
             color: var(--deep-brown); 
             margin: 0; 
             font-style: italic; 
             letter-spacing: 0.1em;
+            font-weight: normal;
         }
         .topics-header p { 
-            font-size: 1rem; 
+            font-size: 0.9rem; 
             color: var(--sun-gold); 
             margin-top: 10px;
             letter-spacing: 0.2em;
@@ -65,7 +67,6 @@
 
         .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 
-        /* マガジン風レイアウト */
         .topic-item {
             display: flex;
             align-items: center;
@@ -79,7 +80,6 @@
             width: 100%;
             height: 450px;
             object-fit: cover;
-            /* 山吹色のアクセントライン */
             box-shadow: 15px 15px 0px var(--sun-gold);
         }
 
@@ -91,28 +91,29 @@
             margin: 15px 0 25px; 
             line-height: 1.4;
             font-weight: normal;
+            text-align: left; /* トピックス内は左寄せで見やすく */
         }
+        /* index.htmlのh2装飾を打ち消し */
+        .topic-text h2::after { display: none; }
+
         .topic-text p { font-size: 0.95rem; color: #555; text-align: justify; }
 
-        footer { text-align: center; padding: 80px 20px; color: #888; background: #fff; border-top: 1px solid #eee; }
+        footer { text-align: center; padding: 80px 20px; color: #aaa; font-size: 0.8rem; border-top: 1px solid #eee; }
 
-        /* スマホ対応 */
         @media (max-width: 768px) {
             .topic-item, .topic-item:nth-child(even) { flex-direction: column; gap: 40px; }
-            .topic-img-wrapper img { height: 300px; box-shadow: 10px 10px 0px var(--sun-gold); }
-            .topics-header h1 { font-size: 2rem; }
+            .topic-img-wrapper img { height: 300px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">HOME</a>
-        <a href="index.html#menu">COURSE</a>
-        <a href="topics.html" style="border-bottom: 2px solid var(--sun-gold);">TOPICS</a>
-        <a href="gallery.html">GALLERY</a>
-        <a href="menu.html">DRINKS</a>
-        <a href="index.html#access">ACCESS</a>
+        <a href="index.html">Home</a>
+        <a href="topics.html" style="color: var(--sun-gold);">Topics</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="menu.html">Drinks & Wine</a>
+        <a href="index.html#access">Access</a>
     </nav>
 
     <div class="topics-header">
@@ -151,8 +152,8 @@
     </div>
 
     <footer>
-        <p style="letter-spacing: 2px; margin-bottom: 10px;">Bistro Grand Soleil</p>
-        <small>© 2026 Bistro Grand Soleil</small>
+        <p>Bistro Grand Soleil</p>
+        © 2026 Bistro Grand Soleil
     </footer>
 
 </body>
