@@ -2,23 +2,86 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Topics - Bistro Grand Soleil</title>
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
-    <header>
-        <h1>Bistro Grand Soleil</h1>
-        <nav>
-            <a href="index.html">Home</a> | <a href="menu.html">Menu</a> | <b>Topics</b> | <a href="gallery.html">Gallery</a>
-        </nav>
-    </header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics | Bistro Grand Soleil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --sun-yellow: #F8B500; 
+            --deep-brown: #3C2A21; 
+            --bg-cream: #FFFEF9; 
+            --text-main: #333; 
+        }
+        body { margin: 0; font-family: "serif", "Helvetica Neue", Arial; background-color: var(--bg-cream); color: var(--text-main); line-height: 1.8; }
+        
+        nav { background: white; padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        nav a { text-decoration: none; color: var(--deep-brown); margin: 0 15px; font-weight: bold; }
 
-    <main>
-        <h2>今月の食材と一皿</h2>
-        <article class="topic-item">
-            <h3>【2月の旬】熊本県産 苺のデセール</h3>
-            <p>今月は地元熊本の契約農家から届いた新鮮な苺を贅沢に使用しております...</p>
-            <img src="images/strawberry.jpg" alt="今月の料理" width="400">
+        .topics-header { padding: 60px 20px; text-align: center; background: #fff; }
+        .topics-header h1 { font-size: 2.5rem; color: var(--deep-brown); margin-bottom: 10px; font-style: italic; }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        /* 記事のスタイル */
+        .topic-post { background: white; margin-bottom: 80px; overflow: hidden; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .topic-image { width: 100%; height: 400px; object-fit: cover; }
+        .topic-content { padding: 40px; }
+        .date { color: var(--sun-yellow); font-weight: bold; font-family: sans-serif; letter-spacing: 0.1em; }
+        .topic-content h2 { font-size: 1.8rem; margin: 10px 0 20px; color: var(--deep-brown); }
+        .topic-content p { color: #555; font-size: 1.05rem; }
+        .ingredient-focus { background: #fdfaf0; padding: 20px; border-left: 4px solid var(--sun-yellow); margin-top: 30px; }
+
+        footer { text-align: center; padding: 60px; color: #888; }
+        @media (max-width: 768px) { .topic-image { height: 250px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="topics.html" style="color: var(--sun-yellow);">Topics</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <div class="topics-header">
+        <h1>Les Couleurs de Saison</h1>
+        <p>〜 季節の彩り・今月の食材 〜</p>
+    </div>
+
+    <div class="container">
+        <article class="topic-post">
+            <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1000" alt="阿蘇赤牛" class="topic-image">
+            <div class="topic-content">
+                <span class="date">2026.02.01</span>
+                <h2>阿蘇の恩恵、赤牛のグリルを赤ワインソースで</h2>
+                <p>
+                    今月のメインディッシュは、阿蘇の広大な草原で育った「赤牛」をご用意しました。
+                    脂身が少なく、噛むほどに赤身本来の旨みが広がるのが特徴です。
+                    フランス産ボルドーワインを惜しみなく使った濃厚なソースとのマリアージュをお楽しみください。
+                </p>
+                <div class="ingredient-focus">
+                    <strong><i class="fas fa-utensils"></i> 今月のこだわり食材：赤牛（熊本県産）</strong><br>
+                    ヘルシーながら力強い味わい。地元の生産者から直接届く、鮮度抜群の肉質をぜひ。
+                </div>
+            </div>
         </article>
-    </main>
+
+        <article class="topic-post">
+            <img src="https://images.unsplash.com/photo-1590004953392-5aba2e786369?auto=format&fit=crop&w=1000" alt="季節のデザート" class="topic-image">
+            <div class="topic-content">
+                <span class="date">2026.02.01</span>
+                <h2>春を待つ、完熟苺のデセール</h2>
+                <p>
+                    食後のひとときを彩るのは、熊本の冬の代名詞とも言える苺。
+                    酸味と甘みのバランスが絶妙な「さがほのか」を、自家製のバニラアイスと軽いムースに仕立てました。
+                    見た目にも華やかな、一足早い春の訪れを感じる一皿です。
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        © 2026 Bistro Grand Soleil
+    </footer>
 </body>
 </html>
