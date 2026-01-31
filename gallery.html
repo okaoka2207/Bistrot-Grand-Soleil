@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Bistro Grand Soleil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --sun-yellow: #F8B500; 
+            --deep-brown: #3C2A21; 
+            --bg-cream: #FFFEF9; 
+        }
+        body { margin: 0; font-family: "serif", "Helvetica Neue", Arial; background-color: var(--bg-cream); color: var(--deep-brown); }
+        
+        nav { background: white; padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        nav a { text-decoration: none; color: var(--deep-brown); margin: 0 15px; font-weight: bold; }
 
+        .gallery-header { padding: 60px 20px; text-align: center; }
+        .gallery-header h1 { font-size: 2.5rem; margin-bottom: 10px; font-style: italic; }
+
+        /* Instagram風グリッドレイアウト */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 横に3枚並べる */
+            gap: 10px; /* 写真の隙間 */
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 10px 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1 / 1; /* 正方形を維持 */
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* マウスを乗せた時の演出 */
+        .gallery-item:hover img {
+            transform: scale(1.1); /* 少し拡大 */
+        }
+
+        .gallery-item:hover::after {
+            content: "View";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        footer { text-align: center; padding: 60px; color: #888; }
+
+        /* スマホ対応：2列にする */
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 5px; }
+            .gallery-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="topics.html">Topics</a>
+        <a href="gallery.html" style="color: var(--sun-yellow);">Gallery</a>
+    </nav>
+
+    <div class="gallery-header">
+        <h1>Galerie</h1>
+        <p>〜 グランソレーユの風景 〜</p>
+    </div>
+
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="iriguti.jpg" alt="外観"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1550966841-3ee4ad05f038?auto=format&fit=crop&w=500" alt="店内"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500" alt="ワイン"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=500" alt="料理1"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=500" alt="料理2"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=500" alt="デザート"></div>
+        </div>
+
+    <footer>
+        © 2026 Bistro Grand Soleil
+    </footer>
+</body>
+</html>
