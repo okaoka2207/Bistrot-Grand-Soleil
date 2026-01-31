@@ -12,71 +12,100 @@
         section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
         h2 { text-align: center; color: var(--deep-brown); border-bottom: 2px solid var(--primary-yellow); display: inline-block; margin-bottom: 40px; position: relative; left: 50%; transform: translateX(-50%); }
         .menu-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .menu-box { background: white; padding: 25px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .menu-box { background: white; padding: 25px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 0 8px 8px 0; }
         .menu-item { display: flex; justify-content: space-between; font-weight: bold; border-bottom: 1px dotted #ccc; margin-bottom: 5px; }
-        .course-item { margin-bottom: 15px; }
-        .course-item small { display: block; color: #666; font-size: 0.8rem; border-left: 2px solid #eee; padding-left: 5px; }
-        .tel-btn { display: inline-block; padding: 15px 30px; background-color: var(--primary-yellow); color: var(--deep-brown); text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; }
-        .wine-section { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; }
-        details { border-bottom: 1px solid #eee; padding: 10px 0; cursor: pointer; }
-        summary { font-weight: bold; display: flex; justify-content: space-between; list-style: none; }
+        .course-item { margin-bottom: 20px; }
+        .course-item small { display: block; color: #666; font-size: 0.85rem; line-height: 1.6; padding-left: 5px; border-left: 2px solid #eee; }
+        .info-box { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 20px; }
+        .tel-btn { display: inline-block; padding: 15px 30px; background-color: var(--primary-yellow); color: var(--deep-brown); text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; margin-top: 10px; }
+        .map-container { margin-top: 30px; border-radius: 10px; overflow: hidden; height: 350px; border: 1px solid #eee; }
         @media (max-width: 768px) { .menu-container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <header>
         <h1>Bistro Grand Soleil</h1>
-        <p>旬の素材を活かしたフランス料理</p>
+        <p>熊本・自衛隊通り近く 旬の素材を活かしたフランス料理</p>
     </header>
 
     <section id="menu">
         <h2>Course Menu</h2>
-        <p style="text-align: center; font-weight: bold;"><i class="fas fa-bread-slice"></i> 全コース パンおかわり自由</p>
+        <p style="text-align: center; font-weight: bold; color: var(--deep-brown); margin-top: -20px; margin-bottom: 40px;">
+            <i class="fas fa-bread-slice"></i> すべてのコースにパン、おかわり自由
+        </p>
+
         <div class="menu-container">
             <div class="menu-box">
-                <h3>Lunch</h3>
-                <div class="course-item"><div class="menu-item"><span>Aコース</span><span>¥3,000</span></div><small>アミューズ/スープ/メイン/デザート/珈琲</small></div>
-                <div class="course-item"><div class="menu-item"><span>Bコース</span><span>¥4,000</span></div><small>前菜盛/スープ/メイン/デザート/珈琲</small></div>
+                <h3 style="color: var(--deep-brown); border-bottom: 1px solid #eee; padding-bottom: 10px;">☀️ Lunch Course</h3>
+                <div class="course-item">
+                    <div class="menu-item"><span>Aコース</span><span>¥3,000</span></div>
+                    <small>アミューズ / スープ / 本日のメイン / デザート / コーヒー</small>
+                </div>
+                <div class="course-item">
+                    <div class="menu-item"><span>Bコース</span><span>¥4,000</span></div>
+                    <small>オードブル盛り合わせ / スープ / 本日のメイン / デザート / コーヒー</small>
+                </div>
+                <div class="course-item">
+                    <div class="menu-item"><span>Cコース</span><span>¥10,000</span></div>
+                    <small>フルコース（ご予算に応じます）</small>
+                </div>
             </div>
+
             <div class="menu-box">
-                <h3>Dinner</h3>
-                <div class="course-item"><div class="menu-item"><span>Aコース</span><span>¥5,000</span></div><small>アミューズ/前菜/メイン/デザート/珈琲</small></div>
-                <div class="course-item"><div class="menu-item"><span>Cコース(フル)</span><span>¥10,000</span></div><small>アミューズ/前菜/スープ/魚/肉/デザート/小菓子</small></div>
+                <h3 style="color: var(--deep-brown); border-bottom: 1px solid #eee; padding-bottom: 10px;">🌙 Dinner Course</h3>
+                <div class="course-item">
+                    <div class="menu-item"><span>Aコース</span><span>¥5,000</span></div>
+                    <small>アミューズ / オードブル / 本日のメイン / デザート / コーヒー</small>
+                </div>
+                <div class="course-item">
+                    <div class="menu-item"><span>Bコース</span><span>¥6,500</span></div>
+                    <small>アミューズ / オードブル盛り合わせ / スープ / 本日のメイン / デザート / コーヒー</small>
+                </div>
+                <div class="course-item">
+                    <div class="menu-item"><span>Cコース (フルコース)</span><span>¥10,000</span></div>
+                    <small>アミューズ / オードブル / スープ / 魚料理 / お口直し / 肉料理 / デザート / コーヒー</small>
+                </div>
             </div>
         </div>
 
-        <h2 style="margin-top: 80px;">Drink Menu</h2>
-        <div class="menu-container">
-            <div class="menu-box">
-                <h3>🍺 Beer & Other</h3>
-                <div class="menu-item"><span>キリン一番搾り 中瓶</span><span>¥1,000</span></div>
-                <div class="menu-item"><span>グラスワイン (赤/白)</span><span>¥1,000〜</span></div>
-                <div class="menu-item"><span>スパークリング</span><span>¥1,500〜</span></div>
-                <h3 style="margin-top:20px;">🥂 Non Alcohol</h3>
-                <div class="menu-item"><span>ノンアルワイン</span><span>¥1,200</span></div>
-                <div class="menu-item"><span>ソフトドリンク各種</span><span>¥600</span></div>
-            </div>
-            <div class="menu-box">
-                <h3>🍷 Aperitif / Digestif</h3>
-                <div class="menu-item"><span>キール</span><span>¥1,000</span></div>
-                <div class="menu-item"><span>カクテル各種</span><span>¥900〜</span></div>
-                <div class="menu-item"><span>マール・ド・ブルゴーニュ</span><span>¥3,000</span></div>
-                <div class="menu-item"><span>ウイスキー 白州</span><span>¥1,500</span></div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <p>シャブリ、ムルソー、マルゴー等、全50種類以上のリストはこちら</p>
+        <div style="text-align: center; margin-top: 60px;">
             <a href="menu.html" class="tel-btn" style="background: var(--deep-brown); color: white;">
                 <i class="fas fa-wine-glass-alt"></i> 全てのドリンク・ワインリストを見る
             </a>
         </div>
     </section>
 
-    <section style="background: var(--deep-brown); color: white; text-align: center;">
-        <h2>Access</h2>
-        <p>予約TEL: 00-0000-0000</p>
-        <p>ランチ 11:00-14:30 / ディナー 17:00-22:00</p>
+    <section id="access">
+        <h2>Information & Access</h2>
+        <div class="info-box" style="text-align: center;">
+            <div style="margin-bottom: 30px;">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>住所</strong></p>
+                <p>〒862-0908 熊本県熊本市東区新生２丁目２−１０</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <p><i class="fas fa-clock"></i> <strong>営業時間</strong></p>
+                <p>ランチ：11:00 〜 14:30 (L.O. 14:00)<br>
+                   ディナー：17:00 〜 22:00 (L.O. 21:00)</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <p><i class="fas fa-phone-alt"></i> <strong>ご予約・お問い合わせ</strong></p>
+                <a href="tel:096-377-8228" style="font-size: 1.8rem; font-weight: bold; color: var(--deep-brown); text-decoration: none;">096-377-8228</a>
+                <p style="font-size: 0.9rem; opacity: 0.8;">※ご予約はお電話にて承っております</p>
+            </div>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.7661582294436!2d130.7561682155829!3d32.778513391214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3540f38bf0b55573%3A0x238c054c70cf123a!2z44OT44K544OI44Ot44Kw44Op44Oz44K944Os44O844Om!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <p style="margin-top: 15px;"><a href="https://maps.app.goo.gl/rM3Apxi3M7G5rL9o6" target="_blank" style="color: #666; font-size: 0.9rem;">Googleマップで開く</a></p>
+        </div>
     </section>
+
+    <footer style="text-align: center; padding: 40px; font-size: 0.8rem; color: #888;">
+        © 2026 Bistro Grand Soleil
+    </footer>
 </body>
 </html>
