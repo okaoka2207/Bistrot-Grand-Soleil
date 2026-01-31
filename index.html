@@ -3,254 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bistro Grand Soleil | ビストログランソレーユ</title>
-
-    <meta name="description" content="熊本市東区のフレンチビストロ「グランソレーユ」。阿蘇赤牛や地元の旬な食材を活かした本格コース料理を、完全予約制の落ち着いた空間で。">
-    <meta property="og:title" content="Bistro Grand Soleil | ビストログランソレーユ">
-    <meta property="og:description" content="熊本・阿蘇の恵みを味わう、完全予約制の本格フレンチ。ランチ・ディナーのご予約受付中。">
-    <meta property="og:image" content="images/iriguti.jpg">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="images/favicon.jpg">
-<link rel="apple-touch-icon" href="jpeg/favicon.jpg">
+    <link rel="apple-touch-icon" href="images/favicon.jpg">
+    <title>Bistro Grand Soleil | Gallery</title>
+
+    <meta name="description" content="ビストログランソレーユのコース料理。熊本の旬を彩る一皿一皿をご紹介します。">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* --- サイト共通デザインルール --- */
-        :root { 
-            --sun-gold: #F8B500;    /* 山吹色：太陽の輝き */
-            --deep-brown: #3C2A21;  /* 焦げ茶：重厚感 */
-            --bg-cream: #FFFEF9;    /* 背景：柔らかな白 */
-            --text-main: #333; 
-        }
-
-        body { 
-            margin: 0; 
-            font-family: "Georgia", "Hiragino Mincho ProN", serif; /* 明朝体で統一 */
-            background-color: var(--bg-cream); 
-            color: var(--text-main); 
-            line-height: 1.8; 
-        }
-
-        /* --- ナビゲーション（スマホ対応版） --- */
-        nav { 
-            background: white; 
-            height: 70px; /* 高さを固定 */
-            width: 100%;
-            position: sticky; 
-            top: 0; 
-            z-index: 2000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* デスクトップ用リンク */
+        :root { --sun-gold: #F8B500; --deep-brown: #3C2A21; --bg-cream: #FFFEF9; --text-main: #333; }
+        body { margin: 0; font-family: "Georgia", "Hiragino Mincho ProN", serif; background-color: var(--bg-cream); color: var(--text-main); line-height: 1.8; }
+        nav { background: white; height: 70px; width: 100%; position: sticky; top: 0; z-index: 2000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; }
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--deep-brown); 
-            font-weight: bold; 
-            font-size: 0.85rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
+        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: var(--sun-gold); }
-
-        /* 三本線ボタン（スマホ用・初期状態は隠す） */
-        .menu-toggle { 
-            display: none; 
-            font-size: 1.5rem; 
-            color: var(--deep-brown); 
-            cursor: pointer; 
-            z-index: 3000; 
-        }
-
-        /* スマホ用レスポンシブ設定 */
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--deep-brown); cursor: pointer; z-index: 3000; }
         @media (max-width: 768px) {
             nav { justify-content: space-between; padding: 0 25px; box-sizing: border-box; }
-            .menu-toggle { display: block; } /* スマホでボタンを表示 */
-
-            /* スマホで全画面に広がるメニュー */
-            .nav-links {
-                position: fixed; top: 0; right: -100%; /* 横に隠しておく */
-                width: 100%; height: 100vh; background: rgba(60, 42, 33, 0.98);
-                flex-direction: column; justify-content: center; align-items: center;
-                transition: 0.5s ease-in-out; gap: 40px;
-            }
-            .nav-links.active { right: 0; } /* activeクラスがついたら表示 */
+            .menu-toggle { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: rgba(60, 42, 33, 0.98); flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; gap: 40px; }
+            .nav-links.active { right: 0; }
             .nav-links a { color: white; font-size: 1.2rem; }
         }
-
-        /* --- ヒーローセクション --- */
-        header { 
-            height: 75vh; 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-            url('iriguti.jpg') center/cover; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; 
-            color: white; text-align: center; 
-        }
-        .logo-img {
-            max-width: 280px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
-        }
-
-        /* --- セクション共通 --- */
-        section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
-        h2 { 
-            text-align: center; font-size: 2.2rem; color: var(--deep-brown); 
-            margin-bottom: 60px; font-weight: normal; font-style: italic;
-        }
-        h2::after {
-            content: ""; display: block; width: 40px; height: 2px; 
-            background: var(--sun-gold); margin: 15px auto 0;
-        }
-
-        /* --- メニューカード --- */
-        .menu-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .menu-box { 
-            background: white; padding: 40px; 
-            border: 1px solid #eee; border-radius: 2px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-        }
-        .menu-box h3 { 
-            text-align: center; border-bottom: 1px solid #f0f0f0; 
-            padding-bottom: 20px; margin-bottom: 30px; color: var(--deep-brown);
-        }
-        .course-item { margin-bottom: 30px; }
-        .menu-item { display: flex; justify-content: space-between; font-weight: bold; color: var(--deep-brown); }
-        .course-item small { display: block; color: #777; font-size: 0.85rem; margin-top: 5px; }
-
-        /* --- リンクボタン --- */
-        .action-btn { 
-            display: inline-block; padding: 15px 40px; 
-            background-color: var(--deep-brown); color: white; 
-            text-decoration: none; font-size: 0.9rem; letter-spacing: 0.1em;
-            transition: 0.3s; margin-top: 30px;
-        }
-        .action-btn:hover { background-color: var(--sun-gold); }
-
-        /* --- インフォメーション --- */
-        .info-box { text-align: center; background: white; padding: 60px; border: 1px solid #eee; }
-        .tel-number { font-size: 2.2rem; font-weight: bold; color: var(--deep-brown); text-decoration: none; display: block; margin: 20px 0; }
-
-        @media (max-width: 768px) { 
-            .menu-container { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.5rem !important; }
-            .info-box { padding: 40px 20px; }
-            .tel-number { font-size: 1.8rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        .gallery-header { text-align: center; margin-bottom: 60px; padding-top: 40px; }
+        .gallery-header h1 { font-size: 2.5rem; color: var(--deep-brown); margin: 0; font-style: italic; font-weight: normal; }
+        .gallery-header p { color: var(--sun-gold); letter-spacing: 0.2em; font-size: 0.9rem; margin-top: 10px; }
+        .course-section { margin-bottom: 100px; }
+        .course-title { font-size: 1.8rem; color: var(--deep-brown); text-align: center; margin-bottom: 50px; letter-spacing: 0.1em; }
+        .course-title::after { content: ""; display: block; width: 40px; height: 1px; background: var(--sun-gold); margin: 15px auto 0; }
+        .dish-item { display: flex; gap: 50px; align-items: center; margin-bottom: 80px; }
+        .dish-item:nth-child(even) { flex-direction: row-reverse; }
+        .dish-photo { flex: 1.2; }
+        .dish-photo img { width: 100%; height: 400px; object-fit: cover; box-shadow: 15px 15px 0px rgba(248, 181, 0, 0.1); border: 1px solid #f0f0f0; }
+        .dish-text { flex: 1; }
+        .dish-text h3 { font-size: 1.4rem; color: var(--deep-brown); margin: 0 0 20px; font-weight: normal; }
+        .dish-text p { font-size: 0.95rem; color: #555; text-align: justify; line-height: 2; }
+        footer { text-align: center; padding: 100px 20px; color: #aaa; font-size: 0.8rem; border-top: 1px solid #eee; }
+        @media (max-width: 768px) {
+            .dish-item, .dish-item:nth-child(even) { flex-direction: column; gap: 30px; }
+            .dish-photo img { height: 280px; }
+            .dish-text { text-align: center; }
+            .gallery-header h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-
     <nav>
         <div style="font-weight: bold; letter-spacing: 1px; color: var(--deep-brown); margin-left: 20px;">GRAND SOLEIL</div>
-        
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
         <div class="nav-links" id="nav-content">
             <a href="index.html">Home</a>
             <a href="topics.html">Topics</a>
-            <a href="gallery.html">Gallery</a>
+            <a href="gallery.html" style="color: var(--sun-gold);">Gallery</a>
             <a href="menu.html">Drinks & Wine</a>
-            <a href="#access">Access</a>
+            <a href="index.html#access">Access</a>
         </div>
     </nav>
+    <div class="container">
+        <header class="gallery-header">
+            <h1>Galerie</h1>
+            <p>ビストログランソレーユの風景</p>
+        </header>
 
-    <header>
-        <h1 style="font-size: 3.5rem; margin: 0; letter-spacing: 3px;">Bistro Grand Soleil</h1>
-        <p style="font-size: 1.1rem; letter-spacing: 0.2em; margin-top: 10px;">Grandit sous le soleil de Kumamoto</p>
-    </header>
-
-    <section id="menu">
-        <h2>Course Menu</h2>
-        <p style="text-align: center; font-weight: bold; margin-bottom: 50px; color: var(--sun-gold);">
-            <i class="fas fa-bread-slice"></i> すべてのコースでパンをおかわり自由でお楽しみいただけます
-        </p>
-
-        <div class="menu-container">
-            <div class="menu-box">
-                <h3>Lunch Course</h3>
-                <div class="course-item">
-                    <div class="menu-item"><span>Course A</span><span>¥3,000</span></div>
-                    <small>アミューズ / スープ / 本日のメイン / デザート / コーヒー</small>
+        <section class="course-section">
+            <h2 class="course-title">Courses</h2>
+            <div class="dish-item">
+                <div class="dish-photo">
+                    <img src="images/iriguti.jpg" alt="お料理の写真">
                 </div>
-                <div class="course-item">
-                    <div class="menu-item"><span>Course B</span><span>¥4,000</span></div>
-                    <small>オードブル盛り合わせ / スープ / 本日のメイン / デザート / コーヒー</small>
-                </div>
-                <div class="course-item">
-                    <div class="menu-item"><span>Specialite</span><span>¥10,000</span></div>
-                    <small>シェフお任せのフルコース（要予約）</small>
+                <div class="dish-text">
+                    <h3>地産野菜のテリーヌ</h3>
+                    <p>熊本の豊かな土壌で育った旬の野菜を、目にも鮮やかなテリーヌに。素材の甘みを引き立てた一皿です。</p>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <div class="menu-box">
-                <h3>Dinner Course</h3>
-                <div class="course-item">
-                    <div class="menu-item"><span>Course A</span><span>¥5,000</span></div>
-                    <small>アミューズ / オードブル / 本日のメイン / デザート / コーヒー</small>
-                </div>
-                <div class="course-item">
-                    <div class="menu-item"><span>Course B</span><span>¥6,500</span></div>
-                    <small>アミューズ / オードブル盛り合わせ / スープ / 本日のメイン / デザート / コーヒー</small>
-                </div>
-                <div class="course-item">
-                    <div class="menu-item"><span>Gastronomie</span><span>¥10,000</span></div>
-                    <small>旬の味覚を詰め込んだ至高のフルコース</small>
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="menu.html" class="action-btn">View Wine List</a>
-        </div>
-    </section>
-
-    <section id="access">
-        <h2>Information & Access</h2>
-        <div class="info-box">
-            <p><i class="fas fa-map-marker-alt"></i> <strong>ADRESS</strong></p>
-            <p>〒862-0908 熊本県熊本市東区新生２丁目２−１０</p>
-            <br>
-            <p style="margin-top: 40px;"><i class="fas fa-clock"></i> <strong>OPEN</strong></p>
-            <p>Lunch 11:00 - 14:30 (L.O. 14:00)<br>Dinner 17:00 - 22:00 (L.O. 21:00)</p>
-            <p style="font-size: 0.85rem; color: var(--sun-gold);">※不定休（完全予約制のため、事前にお問い合わせください）</p>
-
-            <p style="margin-top: 40px;"><i class="fas fa-phone-alt"></i> <strong>RESERVATION</strong></p>
-            <a href="tel:096-377-8228" class="tel-number">096-377-8228</a>
-        </div>
-    </section>
-
-    <footer style="text-align: center; padding: 80px 20px; border-top: 1px solid #eee; font-size: 0.8rem; color: #888;">
-        <p style="letter-spacing: 2px;">Bistro Grand Soleil</p>
-        © 2026 Bistro Grand Soleil
-    </footer>
+    <footer><p>Bistro Grand Soleil</p>© 2026 Bistro Grand Soleil</footer>
 
     <script>
         const menu = document.querySelector('#mobile-menu');
         const menuLinks = document.querySelector('#nav-content');
-
-        menu.addEventListener('click', function() {
-            menuLinks.classList.toggle('active');
-            const icon = menu.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-
-        // リンクをクリックしたらメニューを閉じる
-        menuLinks.addEventListener('click', function() {
-            menuLinks.classList.remove('active');
-            const icon = menu.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        });
+        menu.addEventListener('click', () => menuLinks.classList.toggle('active'));
     </script>
-
 </body>
 </html>
