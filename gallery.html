@@ -22,98 +22,66 @@
             line-height: 1.8; 
         }
 
-        /* --- ナビゲーション（完全統一） --- */
+        /* --- ナビゲーション（スマホ対応版） --- */
         nav { 
-            background: white; 
-            padding: 15px 0; 
-            text-align: center; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
+            background: white; height: 70px; width: 100%;
+            position: sticky; top: 0; z-index: 2000; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            display: flex; justify-content: center; align-items: center;
         }
-        nav a { 
-            text-decoration: none; 
-            color: var(--deep-brown); 
-            margin: 0 15px; 
-            font-weight: bold; 
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            transition: 0.3s;
+
+        /* デスクトップ用リンク */
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { 
+            text-decoration: none; color: var(--deep-brown); font-weight: bold; 
+            font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; transition: 0.3s;
         }
-        nav a:hover { color: var(--sun-gold); }
+        .nav-links a:hover { color: var(--sun-gold); }
+
+        /* 三本線ボタン（スマホ用） */
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--deep-brown); cursor: pointer; z-index: 3000; }
+
+        @media (max-width: 768px) {
+            nav { justify-content: space-between; padding: 0 25px; box-sizing: border-box; }
+            .menu-toggle { display: block; }
+
+            /* スマホ用全画面メニュー */
+            .nav-links {
+                position: fixed; top: 0; right: -100%;
+                width: 100%; height: 100vh; background: rgba(60, 42, 33, 0.98);
+                flex-direction: column; justify-content: center; align-items: center;
+                transition: 0.5s ease-in-out; gap: 40px;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { color: white; font-size: 1.2rem; }
+        }
 
         /* --- ギャラリーヘッダー --- */
         .gallery-header { 
-            padding: 80px 20px 40px; 
-            text-align: center; 
-            background: #fff;
+            padding: 80px 20px 40px; text-align: center; background: #fff;
         }
         .gallery-header h1 { 
-            font-size: 2.5rem; 
-            color: var(--deep-brown); 
-            margin: 0; 
-            font-style: italic; 
-            letter-spacing: 0.1em;
-            font-weight: normal;
+            font-size: 2.5rem; color: var(--deep-brown); margin: 0; 
+            font-style: italic; letter-spacing: 0.1em; font-weight: normal;
         }
         .gallery-header p { 
-            font-size: 0.9rem; 
-            color: var(--sun-gold); 
-            margin-top: 10px;
-            letter-spacing: 0.2em;
+            font-size: 0.9rem; color: var(--sun-gold); margin-top: 10px; letter-spacing: 0.2em;
         }
 
-        /* --- ギャラリーグリッド（Instagram風） --- */
-        .gallery-container {
-            max-width: 1000px;
-            margin: 40px auto 100px;
-            padding: 0 10px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3列 */
-            gap: 15px; /* 写真の間の隙間 */
-        }
-
-        .gallery-item {
-            position: relative;
-            aspect-ratio: 1 / 1; /* 正方形を維持 */
-            overflow: hidden;
-            background-color: #eee;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        /* ホバー時の演出：少し拡大して山吹色のオーバーレイ */
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
+        /* --- ギャラリーグリッド --- */
+        .gallery-container { max-width: 1000px; margin: 40px auto 100px; padding: 0 10px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .gallery-item { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background-color: #eee; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
         .gallery-item::after {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(248, 181, 0, 0.2); /* 山吹色のベール */
-            opacity: 0;
-            transition: 0.3s;
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(248, 181, 0, 0.2); opacity: 0; transition: 0.3s;
         }
-
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
+        .gallery-item:hover::after { opacity: 1; }
 
         footer { text-align: center; padding: 80px 20px; color: #aaa; font-size: 0.8rem; border-top: 1px solid #eee; }
 
-        /* スマホ対応：2列にする */
         @media (max-width: 768px) {
             .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .gallery-header h1 { font-size: 2rem; }
@@ -123,11 +91,19 @@
 <body>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="topics.html">Topics</a>
-        <a href="gallery.html" style="color: var(--sun-gold);">Gallery</a>
-        <a href="menu.html">Drinks & Wine</a>
-        <a href="index.html#access">Access</a>
+        <div style="font-weight: bold; letter-spacing: 1px; color: var(--deep-brown);">GRAND SOLEIL</div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="nav-links" id="nav-content">
+            <a href="index.html">Home</a>
+            <a href="topics.html">Topics</a>
+            <a href="gallery.html" style="color: var(--sun-gold);">Gallery</a>
+            <a href="menu.html">Drinks</a>
+            <a href="index.html#access">Access</a>
+        </div>
     </nav>
 
     <div class="gallery-header">
@@ -154,5 +130,23 @@
         © 2026 Bistro Grand Soleil
     </footer>
 
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const menuLinks = document.querySelector('#nav-content');
+
+        menu.addEventListener('click', function() {
+            menuLinks.classList.toggle('active');
+            const icon = menu.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        menuLinks.addEventListener('click', function() {
+            menuLinks.classList.remove('active');
+            const icon = menu.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        });
+    </script>
 </body>
 </html>
