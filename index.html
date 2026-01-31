@@ -6,230 +6,77 @@
     <title>Bistro Grand Soleil | ビストログランソレーユ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* デザイン設定：イエロー＆ブラウン */
-        :root {
-            --primary-yellow: #f4d03f;
-            --deep-brown: #4e342e;
-            --accent-gold: #d4af37;
-            --bg-cream: #fffdf5;
-            --text-main: #333;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background-color: var(--bg-cream);
-            color: var(--text-main);
-            line-height: 1.8;
-        }
-
-        /* ヒーローエリア */
-        header {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1550966842-30c29a244831?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .logo-area h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0;
-            letter-spacing: 0.1em;
-        }
-
-        .logo-area p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-
-        /* セクション共通 */
-        section {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            text-align: center;
-            color: var(--deep-brown);
-            border-bottom: 2px solid var(--primary-yellow);
-            display: inline-block;
-            margin-bottom: 40px;
-            left: 50%;
-            position: relative;
-            transform: translateX(-50%);
-        }
-
-        /* メニュー表 */
-        .menu-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .menu-box {
-            background: white;
-            padding: 30px;
-            border-left: 5px solid var(--primary-yellow);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .menu-box h3 {
-            color: var(--deep-brown);
-            margin-top: 0;
-        }
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px dotted #ccc;
-            margin-bottom: 10px;
-        }
-
-        /* 店舗情報・予約 */
-        .info-area {
-            text-align: center;
-            background-color: var(--deep-brown);
-            color: white;
-            padding: 60px 20px;
-        }
-
-        .tel-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: var(--primary-yellow);
-            color: var(--deep-brown);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            margin: 20px 0;
-            transition: 0.3s;
-        }
-
-        .tel-btn:hover {
-            background-color: white;
-        }
-
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-            margin-top: 30px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 768px) {
-            .menu-container { grid-template-columns: 1fr; }
-            .logo-area h1 { font-size: 2.2rem; }
-        }
+        :root { --primary-yellow: #f4d03f; --deep-brown: #4e342e; --bg-cream: #fffdf5; --text-main: #333; }
+        body { margin: 0; font-family: "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-cream); color: var(--text-main); line-height: 1.8; }
+        header { height: 60vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1550966842-30c29a244831?auto=format&fit=crop&q=80&w=1600') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+        section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+        h2 { text-align: center; color: var(--deep-brown); border-bottom: 2px solid var(--primary-yellow); display: inline-block; margin-bottom: 40px; position: relative; left: 50%; transform: translateX(-50%); }
+        .menu-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .menu-box { background: white; padding: 25px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .menu-item { display: flex; justify-content: space-between; font-weight: bold; border-bottom: 1px dotted #ccc; margin-bottom: 5px; }
+        .course-item { margin-bottom: 15px; }
+        .course-item small { display: block; color: #666; font-size: 0.8rem; border-left: 2px solid #eee; padding-left: 5px; }
+        .tel-btn { display: inline-block; padding: 15px 30px; background-color: var(--primary-yellow); color: var(--deep-brown); text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; }
+        .wine-section { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; }
+        details { border-bottom: 1px solid #eee; padding: 10px 0; cursor: pointer; }
+        summary { font-weight: bold; display: flex; justify-content: space-between; list-style: none; }
+        @media (max-width: 768px) { .menu-container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-
     <header>
-        <div class="logo-area">
-            <h1>Bistro Grand Soleil</h1>
-            <p>ビストログランソレーユ</p>
-            <p style="border-top: 1px solid white; display: inline-block; padding-top: 10px;">旬の素材を活かした、フランス料理</p>
-        </div>
+        <h1>Bistro Grand Soleil</h1>
+        <p>旬の素材を活かしたフランス料理</p>
     </header>
 
     <section id="menu">
-        <section id="menu">
-        <h2 style="display: block; text-align: center;">Menu</h2>
-        
+        <h2>Course Menu</h2>
+        <p style="text-align: center; font-weight: bold;"><i class="fas fa-bread-slice"></i> 全コース パンおかわり自由</p>
         <div class="menu-container">
             <div class="menu-box">
-                <h3>Lunch Course</h3>
-                <div class="menu-item"><span>Course A</span><span>¥3,000</span></div>
-                <div class="menu-item"><span>Course B</span><span>¥4,000</span></div>
-                <div class="menu-item"><span>Course C</span><span>¥10,000</span></div>
+                <h3>Lunch</h3>
+                <div class="course-item"><div class="menu-item"><span>Aコース</span><span>¥3,000</span></div><small>アミューズ/スープ/メイン/デザート/珈琲</small></div>
+                <div class="course-item"><div class="menu-item"><span>Bコース</span><span>¥4,000</span></div><small>前菜盛/スープ/メイン/デザート/珈琲</small></div>
             </div>
             <div class="menu-box">
-                <h3>Dinner Course</h3>
-                <div class="menu-item"><span>Course A</span><span>¥5,000</span></div>
-                <div class="menu-item"><span>Course B</span><span>¥6,500</span></div>
-                <div class="menu-item"><span>Course C</span><span>¥10,000</span></div>
+                <h3>Dinner</h3>
+                <div class="course-item"><div class="menu-item"><span>Aコース</span><span>¥5,000</span></div><small>アミューズ/前菜/メイン/デザート/珈琲</small></div>
+                <div class="course-item"><div class="menu-item"><span>Cコース(フル)</span><span>¥10,000</span></div><small>アミューズ/前菜/スープ/魚/肉/デザート/小菓子</small></div>
             </div>
         </div>
 
-        <h2 style="display: block; text-align: center; margin-top: 80px;">Drink Menu</h2>
-
-            <div style="text-align: center; margin-bottom: 30px;">
-    <p>当店自慢のワインリスト・お飲み物の全ラインナップはこちら</p>
-    <a href="menu.html" class="tel-btn" style="background: var(--deep-brown); color: white; margin-top: 10px;">
-        <i class="fas fa-wine-glass-alt"></i> 全てのドリンク・ワインリストを見る
-    </a>
-</div>
-
+        <h2 style="margin-top: 80px;">Drink Menu</h2>
         <div class="menu-container">
             <div class="menu-box">
-                <h3>🍺 Beer & Others</h3>
+                <h3>🍺 Beer & Other</h3>
                 <div class="menu-item"><span>キリン一番搾り 中瓶</span><span>¥1,000</span></div>
-                <div class="menu-item"><span>キリン ノンアルコール小瓶</span><span>¥600</span></div>
-                <div class="menu-item"><span>グラスワイン (赤/白)</span><span>¥1,000</span></div>
-                <div class="menu-item"><span>スパークリングワイン</span><span>¥1,500</span></div>
+                <div class="menu-item"><span>グラスワイン (赤/白)</span><span>¥1,000〜</span></div>
+                <div class="menu-item"><span>スパークリング</span><span>¥1,500〜</span></div>
+                <h3 style="margin-top:20px;">🥂 Non Alcohol</h3>
+                <div class="menu-item"><span>ノンアルワイン</span><span>¥1,200</span></div>
+                <div class="menu-item"><span>ソフトドリンク各種</span><span>¥600</span></div>
             </div>
             <div class="menu-box">
-                <h3>🥂 Non Alcohol</h3>
-                <div class="menu-item"><span>ノンアルワイン (赤/白/泡)</span><span>¥1,200</span></div>
-                <div class="menu-item"><span>ペリエ (750ml)</span><span>¥1,200</span></div>
-                <div class="menu-item"><span>ソフトドリンク各種</span><span>¥600</span></div>
-                <small style="color: #666; font-size: 0.75rem;">（オレンジ/グレープフルーツ/ジンジャーエール/烏龍茶/コーヒー/紅茶）</small>
+                <h3>🍷 Aperitif / Digestif</h3>
+                <div class="menu-item"><span>キール</span><span>¥1,000</span></div>
+                <div class="menu-item"><span>カクテル各種</span><span>¥900〜</span></div>
+                <div class="menu-item"><span>マール・ド・ブルゴーニュ</span><span>¥3,000</span></div>
+                <div class="menu-item"><span>ウイスキー 白州</span><span>¥1,500</span></div>
             </div>
         </div>
 
-        <h3 style="text-align: center; color: var(--deep-brown); margin-top: 60px;">Wine List</h3>
-        <p style="text-align: center; font-size: 0.8rem; color: #666; margin-bottom: 20px;">銘柄をクリックすると詳細が表示されます</p>
-        
-        <div class="wine-list-container" style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto;">
-            <h4 style="color: var(--deep-brown); border-bottom: 2px solid var(--primary-yellow); padding-bottom: 5px;">⚪ Vin Blanc (白ワイン)</h4>
-            <details style="margin: 10px 0; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-                <summary style="cursor: pointer; font-weight: bold;">キュヴェ・ド・ラ・メゾン ブラン <span style="float: right;">¥6,000</span></summary>
-                <p style="font-size: 0.9rem; color: #555; margin-top: 10px; padding-left: 10px; border-left: 3px solid var(--primary-yellow);">品種：シャルドネ100%。力強い香りで、まろやかで滑らか。バランスの取れた味わいです。</p>
-            </details>
-            <details style="margin: 10px 0; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-                <summary style="cursor: pointer; font-weight: bold;">ドゥルト・ラ・グラン・キュヴェ <span style="float: right;">¥8,000</span></summary>
-                <p style="font-size: 0.9rem; color: #555; margin-top: 10px; padding-left: 10px; border-left: 3px solid var(--primary-yellow);">品種：ソーヴィニヨン・ブラン100%。レモンやグレープフルーツの香り高く、スッキリしたエレガントな辛口。</p>
-            </details>
-
-            <h4 style="color: var(--deep-brown); border-bottom: 2px solid var(--primary-yellow); padding-bottom: 5px; margin-top: 40px;">🔴 Vin Rouge (赤ワイン)</h4>
-            <details style="margin: 10px 0; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-                <summary style="cursor: pointer; font-weight: bold;">オート・コート・ド・ニュイ 2022 <span style="float: right;">¥20,000</span></summary>
-                <p style="font-size: 0.9rem; color: #555; margin-top: 10px; padding-left: 10px; border-left: 3px solid var(--primary-yellow);">品種：ピノ・ノワール100%。美しいルビーレッド。肉厚な味わいに長い余韻が続きます。</p>
-            </details>
-            <details style="margin: 10px 0; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-                <summary style="cursor: pointer; font-weight: bold;">ル・オーメドック ド ジスクール <span style="float: right;">¥9,800</span></summary>
-                <p style="font-size: 0.9rem; color: #555; margin-top: 10px; padding-left: 10px; border-left: 3 solid var(--primary-yellow);">豊かな果実味と美しいアロマ。メドック格付け第三級の醸造チームが手掛ける逸品。</p>
-            </details>
-            
-            <p style="text-align: center; margin-top: 30px; font-style: italic; font-size: 0.9rem;">※この他にも多数のワインリストをご用意しております。</p>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>シャブリ、ムルソー、マルゴー等、全50種類以上のリストはこちら</p>
+            <a href="menu.html" class="tel-btn" style="background: var(--deep-brown); color: white;">
+                <i class="fas fa-wine-glass-alt"></i> 全てのドリンク・ワインリストを見る
+            </a>
         </div>
     </section>
+
+    <section style="background: var(--deep-brown); color: white; text-align: center;">
+        <h2>Access</h2>
+        <p>予約TEL: 00-0000-0000</p>
+        <p>ランチ 11:00-14:30 / ディナー 17:00-22:00</p>
     </section>
-
-    <div class="info-area">
-        <h2>Reservation & Access</h2>
-        <p>ご予約はお電話にて承っております</p>
-        <a href="tel:00-0000-0000" class="tel-btn"><i class="fas fa-phone"></i> 00-0000-0000</a>
-        <p>【営業時間】 ランチ 11:30-14:30 / ディナー 18:00-22:00<br>【定休日】 火曜日</p>
-        
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8280303808788!2d139.7649361!3d35.6811673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzUyLjIiTiAxMznCsDQ1JzUzLjgiRQ!5e0!3m2!1sja!2sjp!4v1612345678901!5m2!1sja!2sjp"></iframe>
-    </div>
-
-    <footer>
-        &copy; 2026 Bistro Grand Soleil. All Rights Reserved.
-    </footer>
-
 </body>
 </html>
