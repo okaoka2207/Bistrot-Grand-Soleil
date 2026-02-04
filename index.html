@@ -20,23 +20,38 @@
             line-height: 1.6;
         }
 
-        /* --- 共通ナビゲーション --- */
-        nav { 
-            background: white; 
-            height: 80px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 0 50px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-        }
-        .nav-logo { text-decoration: none; color: var(--deep-brown); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.9rem; }
-        .nav-links a:hover { color: var(--sun-gold); }
+        /* --- ナビゲーションバーの統一設定 --- */
+nav { 
+    background: white; 
+    height: 80px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 50px; /* ここを他のページと同じ50pxに固定 */
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+}
+
+.nav-logo { 
+    text-decoration: none; 
+    color: var(--deep-brown); 
+    font-size: 1.5rem; /* 他のページとサイズを合わせる */
+    font-weight: bold; 
+    letter-spacing: 2px; 
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 30px; /* 他のページと間隔を合わせる */
+}
+
+/* スマホ用のレスポンシブも統一 */
+@media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { gap: 15px; }
+}
 
         /* メインビジュアル */
         .hero {
