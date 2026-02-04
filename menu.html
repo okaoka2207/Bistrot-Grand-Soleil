@@ -6,96 +6,58 @@
     <title>Menu | Bistro Grand Soleil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { 
-            --sun-gold: #F8B500; 
-            --deep-brown: #3C2A21; 
-            --bg-cream: #FFFEF9; 
-        }
-        
-        body { 
-            font-family: "Times New Roman", serif; 
-            background-color: var(--bg-cream); 
-            color: var(--deep-brown);
-            margin: 0; 
-            line-height: 1.6;
-        }
+        :root { --sun-gold: #F8B500; --deep-brown: #3C2A21; --bg-cream: #FFFEF9; }
+        body { font-family: "Times New Roman", serif; background-color: var(--bg-cream); color: var(--deep-brown); margin: 0; line-height: 1.6; }
 
-        /* --- 共通ナビゲーションバー --- */
-        nav { 
-            background: white; 
-            height: 80px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 0 50px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-        }
-
-        .nav-logo {
-            text-decoration: none;
-            color: var(--deep-brown);
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        .nav-logo:hover { color: var(--sun-gold); }
-
+        /* ナビゲーション */
+        nav { background: white; height: 80px; display: flex; justify-content: space-between; align-items: center; padding: 0 50px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-logo { text-decoration: none; color: var(--deep-brown); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--deep-brown); 
-            font-weight: bold; 
-            font-size: 0.9rem;
-        }
+        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--sun-gold); }
 
-        /* --- アクセスボタンを非表示 --- */
-        .access-button, .btn-access, #access-btn { 
-            display: none !important; 
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; letter-spacing: 4px; }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-        h1 { text-align: center; font-size: 2rem; margin-bottom: 50px; letter-spacing: 2px; }
-
-        /* メニューのセクションタイトル */
-        .menu-category {
-            text-align: center;
-            border-bottom: 1px solid var(--sun-gold);
-            margin: 60px 0 30px;
-            padding-bottom: 10px;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-        }
-
-        /* メニューアイテムのスタイル */
-        .menu-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        .menu-item {
-            margin-bottom: 20px;
-            border-bottom: 1px dotted #ccc;
-            padding-bottom: 10px;
-        }
-        .menu-name-price {
+        /* コース料理：左右分割レイアウト */
+        .course-flex {
             display: flex;
             justify-content: space-between;
-            font-weight: bold;
+            position: relative;
+            margin-bottom: 80px;
         }
-        .menu-desc {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 5px;
+        /* 中央の縦線 */
+        .course-flex::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: var(--sun-gold);
         }
+        .course-column { width: 45%; }
+        .course-column h2 { text-align: center; font-size: 1.8rem; letter-spacing: 5px; border-bottom: 2px solid var(--sun-gold); padding-bottom: 10px; margin-bottom: 30px; }
+
+        .menu-item { margin-bottom: 30px; }
+        .menu-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; border-bottom: 1px dotted var(--deep-brown); }
+        .menu-detail { font-size: 0.85rem; color: #555; margin-top: 5px; white-space: pre-line; }
+
+        /* ドリンクセクション */
+        .section-title { text-align: center; font-size: 1.6rem; margin: 80px 0 40px; letter-spacing: 3px; border-bottom: 1px solid var(--sun-gold); display: inline-block; width: 100%; padding-bottom: 10px; }
+        .drink-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .wine-list { margin-bottom: 50px; }
+        .wine-item { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .wine-name { font-weight: bold; font-size: 1rem; color: #000; }
+        .wine-meta { font-size: 0.8rem; color: #777; margin-bottom: 5px; }
+        .wine-desc { font-size: 0.85rem; color: #444; }
 
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
-            .nav-links { gap: 15px; }
-            .menu-list { grid-template-columns: 1fr; }
+            .course-flex { flex-direction: column; }
+            .course-flex::after { display: none; }
+            .course-column { width: 100%; }
+            .drink-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -114,41 +76,101 @@
     <div class="container">
         <h1>Menu</h1>
 
-        <h2 class="menu-category">LUNCH & DINNER</h2>
-        <div class="menu-list">
-            <div class="menu-item">
-                <div class="menu-name-price"><span>Course A</span><span>¥3,500~</span></div>
-                <div class="menu-desc">前菜・スープ・メイン・デザートのスタンダードコース</div>
+        <div class="course-flex">
+            <div class="course-column">
+                <h2>LUNCH</h2>
+                <div class="menu-item">
+                    <div class="menu-header"><span>Course A</span><span>¥3,500~</span></div>
+                    <div class="menu-detail">アミューズ / スープ / メイン / デザート コーヒー</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>Course B</span><span>¥5,500~</span></div>
+                    <div class="menu-detail">オードブル盛り合わせ / スープ / 本日のメイン / デザート コーヒー</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>Course C</span><span>¥8,000~</span></div>
+                    <div class="menu-detail">アミューズ / オードブル / スープ / ポワソン / ヴィアンド / デザート コーヒー</div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="menu-name-price"><span>Course B</span><span>¥5,500~</span></div>
-                <div class="menu-desc">旬の食材をふんだんに使用したシェフのおすすめコース</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-name-price"><span>Course C</span><span>¥8,000~</span></div>
-                <div class="menu-desc">特別な日に。贅沢な食材を揃えたフルコース</div>
+
+            <div class="course-column">
+                <h2>DINNER</h2>
+                <div class="menu-item">
+                    <div class="menu-header"><span>Course A</span><span>¥5,000~</span></div>
+                    <div class="menu-detail">アミューズ / スープ / メイン / デザート コーヒー</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>Course B</span><span>¥8,000~</span></div>
+                    <div class="menu-detail">オードブル盛り合わせ / スープ / 本日のメイン / デザート コーヒー</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>Course C</span><span>¥12,000~</span></div>
+                    <div class="menu-detail">アミューズ / オードブル / スープ / ポワソン / ヴィアンド / デザート コーヒー</div>
+                </div>
             </div>
         </div>
 
-        <h2 class="menu-category">DRINK & WINE</h2>
-        <div class="menu-list">
-            <div class="menu-item">
-                <div class="menu-name-price"><span>Glass Wine (Red / White)</span><span>¥800~</span></div>
-                <div class="menu-desc">お料理に合わせた本日の厳選ワイン</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-name-price"><span>Champagne</span><span>¥1,200~</span></div>
-                <div class="menu-desc">乾杯にふさわしいキレのあるシャンパーニュ</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-name-price"><span>Soft Drink</span><span>¥500~</span></div>
-                <div class="menu-desc">自家製レモネード、プレミアムぶどうジュースなど</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-name-price"><span>Bottle Wine</span><span>¥4,500~</span></div>
-                <div class="menu-desc">世界各国のワインをリストにてご用意しております</div>
-            </div>
+        <h2 class="section-title">🍺 Beer & Other</h2>
+        <div class="drink-grid">
+            <div class="menu-item"><div class="menu-header"><span>キリン一番搾り 中瓶</span><span>¥1,000</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>キリン ノンアルコールビール小瓶</span><span>¥600</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>グラスワイン 赤／白</span><span>¥1,000~</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>スパークリングワイン（グラス）</span><span>¥1,500</span></div></div>
         </div>
+
+        <h2 class="section-title">🥂 Non Alcohol & Soft drink</h2>
+        <div class="drink-grid">
+            <div class="menu-item"><div class="menu-header"><span>ノンアルコールワイン（赤/白/泡）</span><span>¥1,200</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>ペリエ 750ml</span><span>¥1,200</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>ソフトドリンク各種</span><span>各 ¥600</span></div><div class="menu-detail">オレンジ / グレープフルーツ / ジンジャーエール / 烏龍茶 / コーヒー / 紅茶</div></div>
+        </div>
+
+        <h2 class="section-title">🍷 Aperitif</h2>
+        <div class="drink-grid">
+            <div class="menu-item"><div class="menu-header"><span>キール</span><span>¥1,000</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>キールロワイヤル / ミモザ</span><span>各 ¥1,500</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>カシス / カンパリ ベース</span><span>各 ¥900</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>ディタ ベース</span><span>各 ¥900</span></div></div>
+        </div>
+
+        <h2 class="section-title">⚪ Vin Blanc（白ワイン）</h2>
+        <div class="wine-list">
+            <div class="wine-item">
+                <div class="wine-name">キュヴェ・ド・ラ・メゾン ブラン / ¥6,000</div>
+                <div class="wine-meta">フランス ラングドック・ルーション / シャルドネ100% / 辛口</div>
+                <div class="wine-desc">力強い香りで、まろやかで滑らか。きれいにバランスの取れた味わいです。</div>
+            </div>
+            <div class="wine-item">
+                <div class="wine-name">ドゥルト・ラ・グラン・キュヴェ / ¥8,000</div>
+                <div class="wine-meta">フランス ボルドー / ソーヴィニヨン・ブラン100% / 辛口</div>
+                <div class="wine-desc">レモンやグレープフルーツの香り高く、スッキリしたエレガントなボルドー。</div>
+            </div>
+            <p style="text-align: center; font-style: italic;">...その他、シャブリやムルソーなど豊富に取り揃えております。</p>
+        </div>
+
+        <h2 class="section-title">🔴 Vin Rouge（赤ワイン）</h2>
+        <div class="wine-list">
+            <div class="wine-item">
+                <div class="wine-name">オート・コート・ド・ニュイ 2022 / ¥20,000</div>
+                <div class="wine-meta">フランス ブルゴーニュ / ピノ・ノワール100% / ミディアムボディ</div>
+                <div class="wine-desc">美しいルビーレッド。黒果実の香りと活き活きとした長い余韻。</div>
+            </div>
+            <div class="wine-item">
+                <div class="wine-name">コート・デュ・ローヌ ヴァルヴィニエール / ¥8,000</div>
+                <div class="wine-meta">フランス ローヌ / 有機シラー100% / フルボディ</div>
+                <div class="wine-desc">果実味が豊富で充実。抑制のきいた旨みが、様々なお食事によくあう。</div>
+            </div>
+            <p style="text-align: center; font-style: italic;">...その他、マルゴーやジュヴレ・シャンベルタンなど特別リストもございます。</p>
+        </div>
+
+        <h2 class="section-title">🥃 Digestif（食後酒）</h2>
+        <div class="drink-grid">
+            <div class="menu-item"><div class="menu-header"><span>マール・ド・ブルゴーニュ</span><span>¥3,000</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>グラッパ・ディ・サッシカイア</span><span>¥2,000</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>ウイスキー（白州 / バランタイン）</span><span>各 ¥1,500</span></div></div>
+            <div class="menu-item"><div class="menu-header"><span>ブランデー（クルボアジェ）</span><span>¥2,000</span></div></div>
+        </div>
+
     </div>
 
 </body>
