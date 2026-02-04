@@ -1,194 +1,66 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.jpg">
-    <link rel="apple-touch-icon" href="images/favicon.jpg">
-    <title>Bistro Grand Soleil | Gallery</title>
+<style>
+    .gallery-section { margin-bottom: 60px; padding: 0 10px; }
+    .section-title { 
+        font-size: 1.4rem; 
+        color: var(--deep-brown); 
+        border-bottom: 2px solid var(--sun-gold); 
+        display: inline-block;
+        margin-bottom: 25px;
+        padding-bottom: 5px;
+    }
+    
+    /* 4枚横並びのレイアウト */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+    
+    .gallery-item { text-align: center; }
+    
+    .gallery-item img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+    
+    .gallery-item img:hover { transform: translateY(-5px); }
+    
+    .caption {
+        margin-top: 10px;
+        font-size: 0.85rem;
+        color: var(--deep-brown);
+        font-weight: bold;
+    }
 
-    <meta name="description" content="ビストログランソレーユのコース料理。ランチ、ディナー、そしてシェフ渾身のスペシャリテ。熊本の旬を彩る一皿一皿をご紹介します。">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* --- デザインルール --- */
-        :root { 
-            --sun-gold: #F8B500; 
-            --deep-brown: #3C2A21; 
-            --bg-cream: #FFFEF9; 
-            --text-main: #333; 
-        }
+    @media (max-width: 768px) {
+        .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+</style>
 
-        body { 
-            margin: 0; font-family: "Georgia", "Hiragino Mincho ProN", serif; 
-            background-color: var(--bg-cream); color: var(--text-main); line-height: 1.8; 
-        }
-
-        /* --- ナビゲーション（スマホ対応） --- */
-        nav { 
-            background: white; height: 70px; width: 100%; position: sticky; top: 0; z-index: 2000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center;
-        }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { 
-            text-decoration: none; color: var(--deep-brown); font-weight: bold; 
-            font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; transition: 0.3s;
-        }
-        .nav-links a:hover { color: var(--sun-gold); }
-        .menu-toggle { display: none; font-size: 1.5rem; color: var(--deep-brown); cursor: pointer; z-index: 3000; }
-
-        @media (max-width: 768px) {
-            nav { justify-content: space-between; padding: 0 25px; box-sizing: border-box; }
-            .menu-toggle { display: block; }
-            .nav-links {
-                position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: rgba(60, 42, 33, 0.98);
-                flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; gap: 40px;
-            }
-            .nav-links.active { right: 0; }
-            .nav-links a { color: white; font-size: 1.2rem; }
-        }
-
-        /* --- ギャラリーコンテンツ --- */
-        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
-        
-        .gallery-header { text-align: center; margin-bottom: 60px; padding-top: 40px; }
-        .gallery-header h1 { font-size: 2.5rem; color: var(--deep-brown); margin: 0; font-style: italic; font-weight: normal; }
-        .gallery-header p { color: var(--sun-gold); letter-spacing: 0.2em; font-size: 0.9rem; margin-top: 10px; }
-
-        /* セクション見出し */
-        .course-section { margin-bottom: 100px; }
-        .course-title { 
-            font-size: 1.8rem; color: var(--deep-brown); text-align: center;
-            margin-bottom: 50px; letter-spacing: 0.1em;
-        }
-        .course-title::after {
-            content: ""; display: block; width: 40px; height: 1px; background: var(--sun-gold);
-            margin: 15px auto 0;
-        }
-
-        /* 料理アイテム（写真と文字の横並び） */
-        .dish-item {
-            display: flex; gap: 50px; align-items: center; margin-bottom: 80px;
-        }
-        /* 偶数番目は左右を入れ替え */
-        .dish-item:nth-child(even) { flex-direction: row-reverse; }
-
-        .dish-photo { flex: 1.2; }
-        .dish-photo img { 
-            width: 100%; height: 400px; object-fit: cover; 
-            box-shadow: 15px 15px 0px rgba(248, 181, 0, 0.1); 
-            border: 1px solid #f0f0f0;
-        }
-
-        .dish-text { flex: 1; }
-        .dish-text h3 { 
-            font-size: 1.4rem; color: var(--deep-brown); margin: 0 0 20px;
-            font-weight: normal; position: relative; display: inline-block;
-        }
-        .dish-text p { font-size: 0.95rem; color: #555; text-align: justify; line-height: 2; }
-
-        footer { text-align: center; padding: 100px 20px; color: #aaa; font-size: 0.8rem; border-top: 1px solid #eee; }
-
-        /* スマホ用設定 */
-        @media (max-width: 768px) {
-            .dish-item, .dish-item:nth-child(even) { flex-direction: column; gap: 30px; }
-            .dish-photo img { height: 280px; }
-            .dish-text { text-align: center; }
-            .gallery-header h1 { font-size: 2rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div style="font-weight: bold; letter-spacing: 1px; color: var(--deep-brown); margin-left: 20px;">GRAND SOLEIL</div>
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-        <div class="nav-links" id="nav-content">
-            <a href="index.html">Home</a>
-            <a href="topics.html">Topics</a>
-            <a href="gallery.html" style="color: var(--sun-gold);">Gallery</a>
-            <a href="menu.html">Drinks & Wine</a>
-            <a href="index.html#access">Access</a>
+<div class="container">
+    <div class="gallery-section">
+        <h2 class="section-title">Course Selection</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="gallery_photo/A_amyu-zu.jpg" alt="アミューズ">
+                <div class="caption">アミューズ</div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery_photo/A_supu.jpg" alt="スープ">
+                <div class="caption">スープ</div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery_photo/A_mein.jpg" alt="メイン料理">
+                <div class="caption">メイン料理</div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery_photo/A_deza-to.jpg" alt="デザート">
+                <div class="caption">デザート</div>
+            </div>
         </div>
-    </nav>
-
-    <div class="container">
-        <header class="gallery-header">
-            <h1>Galerie</h1>
-            <p>ビストログランソレーユの風景</p>
-        </header>
-
-        <section class="course-section">
-            <h2 class="course-title">Lunch Course</h2>
-
-            <div class="dish-item">
-                <div class="dish-photo">
-                    <img src="images/lunch1.jpg" alt="ランチ料理">
-                </div>
-                <div class="dish-text">
-                    <h3>地産野菜のテリーヌ</h3>
-                    <p>熊本の豊かな土壌で育った旬の野菜を、目にも鮮やかなテリーヌに。素材一つひとつの食感と甘みを引き立てた、コースの始まりを彩る一皿です。</p>
-                </div>
-            </div>
-            
-            <div class="dish-item">
-                <div class="dish-photo">
-                    <img src="images/lunch2.jpg" alt="ランチ料理">
-                </div>
-                <div class="dish-text">
-                    <h3>本日のメイン魚料理</h3>
-                    <p>近海で獲れた新鮮な魚を、香ばしくポワレしました。季節のソースと共に、軽やかながらも深みのある味わいをお楽しみください。</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="course-section">
-            <h2 class="course-title">Dinner Course</h2>
-
-            <div class="dish-item">
-                <div class="dish-photo">
-                    <img src="images/dinner1.jpg" alt="ディナー料理">
-                </div>
-                <div class="dish-text">
-                    <h3>阿蘇赤牛のロースト</h3>
-                    <p>旨みの強い阿蘇赤牛をじっくりとロースト。肉本来の力強い味わいを、赤ワインを惜しみなく使った濃厚なソースがさらに引き立てます。</p>
-                </div>
-            </div>
-
-            <div class="dish-item">
-                <div class="dish-photo">
-                    <img src="images/dinner2.jpg" alt="ディナー料理">
-                </div>
-                <div class="dish-text">
-                    <h3>パティシエ特製デセール</h3>
-                    <p>コースを締めくくるのは、繊細な盛り付けのデザート。甘み、酸味、香りの完璧なバランスが、至福のひとときを演出します。</p>
-                </div>
-            </div>
-        </section>
-
     </div>
-
-    <footer>
-        <p>Bistro Grand Soleil</p>
-        © 2026 Bistro Grand Soleil
-    </footer>
-
-    <script>
-        const menu = document.querySelector('#mobile-menu');
-        const menuLinks = document.querySelector('#nav-content');
-
-        menu.addEventListener('click', function() {
-            menuLinks.classList.toggle('active');
-            const icon = menu.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-
-        menuLinks.addEventListener('click', function() {
-            menuLinks.classList.remove('active');
-            const icon = menu.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        });
-    </script>
-</body>
-</html>
+</div>
