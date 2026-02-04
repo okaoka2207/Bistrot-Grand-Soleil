@@ -21,21 +21,45 @@
         .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--sun-gold); }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-        h1 { text-align: center; font-size: 2rem; margin-bottom: 50px; letter-spacing: 2px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        h1 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; letter-spacing: 4px; }
 
-        .menu-category { text-align: center; border-bottom: 1px solid var(--sun-gold); margin: 60px 0 30px; padding-bottom: 10px; font-size: 1.5rem; letter-spacing: 3px; }
-        
-        /* 2列レイアウト */
-        .menu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .menu-group { margin-bottom: 30px; }
-        .group-title { font-weight: bold; font-size: 1.1rem; border-left: 4px solid var(--sun-gold); padding-left: 10px; margin-bottom: 15px; background: #f0f0f066; }
-        
-        .menu-item { margin-bottom: 12px; border-bottom: 1px dotted #ccc; padding-bottom: 5px; }
-        .menu-name-price { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.95rem; }
-        .menu-desc { font-size: 0.8rem; color: #666; }
+        /* カテゴリー見出し */
+        .menu-category { 
+            text-align: center; 
+            background: var(--deep-brown); 
+            color: white;
+            padding: 15px;
+            margin: 80px 0 40px; 
+            font-size: 1.4rem; 
+            letter-spacing: 3px;
+            border-radius: 4px;
+        }
 
-        @media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { gap: 15px; } .menu-list { grid-template-columns: 1fr; } }
+        .sub-category {
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--sun-gold);
+            margin: 40px 0 20px;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* メニューレイアウト */
+        .menu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 50px; }
+        .menu-item { margin-bottom: 25px; page-break-inside: avoid; }
+        .menu-header { display: flex; justify-content: space-between; font-weight: bold; border-bottom: 1px dotted #ccc; padding-bottom: 3px; }
+        .menu-price { white-space: nowrap; margin-left: 15px; }
+        .menu-details { font-size: 0.85rem; color: #555; margin-top: 5px; line-height: 1.4; }
+        .wine-info { font-size: 0.75rem; color: #888; margin-top: 2px; }
+
+        /* 特別セレクション用スタイル */
+        .premium-item { background: #fff; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; }
+
+        @media (max-width: 768px) { 
+            nav { padding: 0 20px; } 
+            .nav-links { gap: 15px; } 
+            .menu-list { grid-template-columns: 1fr; } 
+        }
     </style>
 </head>
 <body>
@@ -53,48 +77,151 @@
     <div class="container">
         <h1>Menu</h1>
 
-        <h2 class="menu-category">COURSE MENU</h2>
+        <h2 class="menu-category">BEER & NON-ALCOHOL</h2>
         <div class="menu-list">
             <div class="menu-item">
-                <div class="menu-name-price"><span>Course A</span><span>¥3,500</span></div>
-                <div class="menu-desc">アミューズ / スープ / メイン / デザート / コーヒー</div>
+                <div class="group-title">🍺 Beer & Others</div>
+                <div class="menu-header"><span>キリン一番搾り 中瓶</span><span class="menu-price">¥1,000</span></div>
+                <div class="menu-header"><span>キリン ノンアルコールビール小瓶</span><span class="menu-price">¥600</span></div>
+                <div class="menu-header"><span>グラスワイン 赤／白</span><span class="menu-price">G ¥1,000 / B ¥4,000</span></div>
+                <div class="menu-header"><span>スパークリングワイン</span><span class="menu-price">G ¥1,500 / B ¥5,000</span></div>
             </div>
             <div class="menu-item">
-                <div class="menu-name-price"><span>Course B</span><span>¥5,500</span></div>
-                <div class="menu-desc">オードブル / スープ / 本日のメイン / デザート / コーヒー</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-name-price"><span>Course C</span><span>¥8,000</span></div>
-                <div class="menu-desc">フルコース（ポワソン & ヴィアンド含む全6品） / コーヒー</div>
+                <div class="group-title">🥂 Non Alcohol & Soft drink</div>
+                <div class="menu-header"><span>ノンアルコールワイン (赤/白/泡)</span><span class="menu-price">G ¥1,200 / B ¥5,000</span></div>
+                <div class="menu-header"><span>ペリエ 750ml</span><span class="menu-price">¥1,200</span></div>
+                <div class="menu-header"><span>ソフトドリンク各種</span><span class="menu-price">各 ¥600</span></div>
+                <div class="menu-details">オレンジ / グレープフルーツ / ジンジャーエール / 烏龍茶 / コーヒー / 紅茶</div>
             </div>
         </div>
 
-        <h2 class="menu-category">WINE & DRINK</h2>
+        <h2 class="menu-category">APERITIF</h2>
         <div class="menu-list">
-            
-            <div class="menu-group">
-                <div class="group-title">WINE</div>
-                <div class="menu-item"><div class="menu-name-price"><span>Glass Wine (Red / White)</span><span>¥800〜</span></div></div>
-                <div class="menu-item"><div class="menu-name-price"><span>Champagne (Glass)</span><span>¥1,200〜</span></div></div>
-                <div class="menu-item"><div class="menu-name-price"><span>Bottle Wine</span><span>¥4,500〜</span></div><div class="menu-desc">ワインリストよりお選びいただけます</div></div>
+            <div class="menu-item">
+                <div class="menu-header"><span>キール</span><span class="menu-price">¥1,000</span></div>
+                <div class="menu-header"><span>キールロワイヤル / ミモザ</span><span class="menu-price">各 ¥1,500</span></div>
+                <div class="menu-header"><span>ディタインペリアル</span><span class="menu-price">¥1,500</span></div>
             </div>
-
-            <div class="menu-group">
-                <div class="group-title">BEER & OTHERS</div>
-                <div class="menu-item"><div class="menu-name-price"><span>Draft Beer</span><span>¥700</span></div></div>
-                <div class="menu-item"><div class="menu-name-price"><span>Highball</span><span>¥650</span></div></div>
-                <div class="menu-item"><div class="menu-name-price"><span>Cocktails</span><span>¥750〜</span></div></div>
+            <div class="menu-item">
+                <div class="menu-header"><span>カンパリ (オレンジ/ソーダ)</span><span class="menu-price">各 ¥900</span></div>
+                <div class="menu-header"><span>カシス (オレンジ/ソーダ)</span><span class="menu-price">各 ¥900</span></div>
+                <div class="menu-header"><span>ジントニック / ファジーネーブル</span><span class="menu-price">各 ¥900</span></div>
+                <div class="menu-header"><span>ディタ (オレ/グレ/エイジア)</span><span class="menu-price">各 ¥900</span></div>
             </div>
-
-            <div class="menu-group">
-                <div class="group-title">SOFT DRINK</div>
-                <div class="menu-item"><div class="menu-name-price"><span>Homemade Lemonade</span><span>¥600</span></div></div>
-                <div class="menu-item"><div class="menu-name-price"><span>Premium Grape Juice</span><span>¥700</span></div></div>
-                <div class="menu-item"><div class="menu-name-price"><span>Ginger Ale</span><span>¥500</span></div></div>
-                <div class="menu-item"><div class="menu-name-price"><span>Coffee / Tea</span><span>¥500</span></div></div>
-            </div>
-
         </div>
+
+        <h2 class="menu-category">VIN BLANC (White Wine)</h2>
+        <h3 class="sub-category">Recommended White</h3>
+        <div class="menu-list">
+            <div class="menu-item">
+                <div class="menu-header"><span>キュヴェ・ド・ラ・メゾン ブラン</span><span class="menu-price">¥6,000</span></div>
+                <div class="wine-info">フランス / シャルドネ100% / 辛口</div>
+                <div class="menu-details">力強い香りで、まろやかで滑らか。きれいにバランスの取れた味わいです。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>ドゥルト・ラ・グラン・キュヴェ</span><span class="menu-price">¥8,000</span></div>
+                <div class="wine-info">フランス / ソーヴィニヨン・ブラン100% / 辛口</div>
+                <div class="menu-details">レモンやグレープフルーツの香り高く、スッキリしたエレガントなボルドー。</div>
+            </div>
+        </div>
+
+        <h3 class="sub-category">White Wine List</h3>
+        <div class="menu-list">
+            <div class="menu-item">
+                <div class="menu-header"><span>シャンパーニュ ブランドブラン ヴォーヴェルサン</span><span class="menu-price">¥15,000</span></div>
+                <div class="menu-details">濃密で力強さを持ちながら繊細さも備えた味わい。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>シャンパーニュ ロワイエ レゼルヴ</span><span class="menu-price">¥11,000</span></div>
+                <div class="menu-details">円熟感が口に広がる、リッチなイエローゴールド。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>アルザス リースリング ジョセフ・シャルシュ</span><span class="menu-price">¥7,500</span></div>
+                <div class="menu-details">品の良いデリケートな果実味。フレッシュで軽やか。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>シャブリ シャトー・ド・フレイ</span><span class="menu-price">¥10,000</span></div>
+                <div class="menu-details">キレ味のよい酸味と豊かなミネラル。シャープでリッチ。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>ムルソー・プルミエクリュ クリスチャン・ベラン</span><span class="menu-price">¥28,000</span></div>
+                <div class="menu-details">芳醇で濃密。余韻に残る上質なフローラルの香り。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>テラス・ド・ギレム V.V. ブラン</span><span class="menu-price">¥4,400</span></div>
+                <div class="menu-details">ピーチやパイナップルのニュアンス。清涼感たっぷりの爽快な味わい。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>ヴーヴレイ マルク・ブレディフ</span><span class="menu-price">¥8,000</span></div>
+                <div class="menu-details">洋梨や蜂蜜のような甘い香りと、まろやかでリッチな味わい。</div>
+            </div>
+        </div>
+
+        <h2 class="menu-category">VIN ROUGE (Red Wine)</h2>
+        <h3 class="sub-category">Recommended Red</h3>
+        <div class="menu-list">
+            <div class="menu-item">
+                <div class="menu-header"><span>オート・コート・ド・ニュイ 2022</span><span class="menu-price">¥20,000</span></div>
+                <div class="wine-info">フランス / ピノ・ノワール100% / ミディアム</div>
+                <div class="menu-details">肉厚な味わいに、活き活きとした長い余韻の後味が続く。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>コート・デュ・ローヌ ヴァルヴィニエール</span><span class="menu-price">¥8,000</span></div>
+                <div class="wine-info">シラー100% / 有機栽培</div>
+                <div class="menu-details">深く広がる味わい、適度なボリューム感。果実味が豊富。</div>
+            </div>
+        </div>
+
+        <h3 class="sub-category">Red Wine List</h3>
+        <div class="menu-list">
+            <div class="menu-item">
+                <div class="menu-header"><span>ル・オーメドック ド ジスクール</span><span class="menu-price">¥9,800</span></div>
+                <div class="menu-details">シャトー・ジスクールが手掛ける、明快でおおらかな味わい。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>パヴィヨン・ド・レオヴィルポワフィレ</span><span class="menu-price">¥18,000</span></div>
+                <div class="menu-details">強い果実とタンニンのバランスが良いセカンド。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>クローズ・エルミタージュ ジャン・ルイ・シャーヴ</span><span class="menu-price">¥11,000</span></div>
+                <div class="menu-details">ベリー系のジャム、スパイシーな風味。しなやかな果実味。</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>ヴィニウス オーガニック カベルネ／メルロー</span><span class="menu-price">¥3,800</span></div>
+                <div class="menu-details">ブラックチェリーの凝縮された果実香。熟れた果実味。</div>
+            </div>
+        </div>
+
+        <h2 class="menu-category">👨‍🍳 Chef's Selection</h2>
+        <div class="menu-list">
+            <div class="menu-item premium-item">
+                <div class="menu-header"><span>ムルソー カス・テット</span><span class="menu-price">¥50,000</span></div>
+                <div class="menu-details">集中力があり、パワフルで活気がある。まさにムルソーの多面的なテロワール。</div>
+            </div>
+            <div class="menu-item premium-item">
+                <div class="menu-header"><span>マルゴー（クロ・デュ・ジョゲイロン）</span><span class="menu-price">¥45,000</span></div>
+                <div class="menu-details">非常に細やかなタンニン。カシスやモカ、バニラのような甘いニュアンス。</div>
+            </div>
+            <div class="menu-item premium-item">
+                <div class="menu-header"><span>ジュヴレ・シャンベルタン 1er エストゥネル</span><span class="menu-price">¥50,000</span></div>
+                <div class="menu-details">深い森の印象。きれいな果実味が非常にエレガントで、気品ある余韻。</div>
+            </div>
+        </div>
+
+        <h2 class="menu-category">DIGESTIF (After Dinner)</h2>
+        <div class="menu-list">
+            <div class="menu-item">
+                <div class="menu-header"><span>マール・ド・ブルゴーニュ</span><span class="menu-price">¥3,000</span></div>
+                <div class="menu-header"><span>グラッパ・ディ・サッシカイア</span><span class="menu-price">¥2,000</span></div>
+                <div class="menu-header"><span>シェリー マンサニージャ（辛口）</span><span class="menu-price">¥2,000</span></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header"><span>ウイスキー 白州 / バランタイン12年</span><span class="menu-price">各 ¥1,500</span></div>
+                <div class="menu-header"><span>ブランデー クルボアジェ</span><span class="menu-price">¥2,000</span></div>
+                <div class="menu-header"><span>マデイラ 10年</span><span class="menu-price">¥1,000</span></div>
+            </div>
+        </div>
+
     </div>
 
 </body>
