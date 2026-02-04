@@ -20,7 +20,7 @@
             line-height: 1.6;
         }
 
-        /* --- 修正ポイント：ナビゲーションバー --- */
+        /* --- 共通ナビゲーション --- */
         nav { 
             background: white; 
             height: 80px; 
@@ -33,32 +33,16 @@
             z-index: 100; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
         }
-
-        .nav-logo {
-            text-decoration: none;
-            color: var(--deep-brown);
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
+        .nav-logo { text-decoration: none; color: var(--deep-brown); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--deep-brown); 
-            font-weight: bold; 
-            font-size: 0.9rem;
-        }
+        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--sun-gold); }
 
-        /* --- 修正ポイント：アクセスボタンを消す --- */
-        .access-button, .btn-access, #access-btn { 
-            display: none !important; 
-        }
-
+        /* コンテナ */
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         h1 { text-align: center; font-size: 2rem; margin-bottom: 50px; letter-spacing: 2px; }
-        
+
+        /* セクション見出し */
         .category-title {
             background-color: var(--deep-brown);
             color: white;
@@ -79,9 +63,10 @@
             font-weight: bold;
         }
 
+        /* 画像を横に4つ並べる設定 */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr); /* 4枚並び */
             gap: 15px;
             margin-bottom: 30px;
         }
@@ -89,17 +74,19 @@
         .gallery-item { text-align: center; }
         .gallery-item img {
             width: 100%;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 1 / 1; /* 正方形にする */
             object-fit: cover;
             border-radius: 4px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
+        .gallery-item img:hover { transform: scale(1.05); } /* ホバーで少し大きく */
         .caption { font-size: 0.8rem; margin-top: 8px; color: #666; }
 
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
             .nav-links { gap: 15px; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); } /* スマホは2枚並び */
         }
     </style>
 </head>
@@ -113,4 +100,63 @@
             <a href="gallery.html" style="color: var(--sun-gold);">GALLERY</a>
             <a href="menu.html">MENU</a>
         </div>
-    </nav
+    </nav>
+
+    <div class="container">
+        <h1>Gallery</h1>
+
+        <h2 class="category-title"><i class="fas fa-sun"></i> LUNCH COURSES</h2>
+        
+        <div class="course-label">Lunch A</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="gallery_photo/A_amyu-zu.jpg"><div class="caption">アミューズ</div></div>
+            <div class="gallery-item"><img src="gallery_photo/A_supu.jpg"><div class="caption">スープ</div></div>
+            <div class="gallery-item"><img src="gallery_photo/A_mein.jpg"><div class="caption">メイン</div></div>
+            <div class="gallery-item"><img src="gallery_photo/A_deza-to.jpg"><div class="caption">デザート</div></div>
+        </div>
+
+        <div class="course-label">Lunch B</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="gallery_photo/LB_1.jpg"><div class="caption">前菜</div></div>
+            <div class="gallery-item"><img src="gallery_photo/LB_2.jpg"><div class="caption">スープ</div></div>
+            <div class="gallery-item"><img src="gallery_photo/LB_3.jpg"><div class="caption">メイン</div></div>
+            <div class="gallery-item"><img src="gallery_photo/LB_4.jpg"><div class="caption">デザート</div></div>
+        </div>
+
+        <div class="course-label">Lunch C</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="gallery_photo/LC_1.jpg"><div class="caption">料理１</div></div>
+            <div class="gallery-item"><img src="gallery_photo/LC_2.jpg"><div class="caption">料理２</div></div>
+            <div class="gallery-item"><img src="gallery_photo/LC_3.jpg"><div class="caption">メイン</div></div>
+            <div class="gallery-item"><img src="gallery_photo/LC_4.jpg"><div class="caption">デザート</div></div>
+        </div>
+
+        <h2 class="category-title"><i class="fas fa-moon"></i> DINNER COURSES</h2>
+        
+        <div class="course-label">Dinner A</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="gallery_photo/DA_1.jpg"><div class="caption">アミューズ</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DA_2.jpg"><div class="caption">前菜</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DA_3.jpg"><div class="caption">メイン</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DA_4.jpg"><div class="caption">デザート</div></div>
+        </div>
+
+        <div class="course-label">Dinner B</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="gallery_photo/DB_1.jpg"><div class="caption">前菜１</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DB_2.jpg"><div class="caption">前菜２</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DB_3.jpg"><div class="caption">メイン</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DB_4.jpg"><div class="caption">デザート</div></div>
+        </div>
+
+        <div class="course-label">Dinner C</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="gallery_photo/DC_1.jpg"><div class="caption">冷前菜</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DC_2.jpg"><div class="caption">温前菜</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DC_3.jpg"><div class="caption">メイン</div></div>
+            <div class="gallery-item"><img src="gallery_photo/DC_4.jpg"><div class="caption">デザート</div></div>
+        </div>
+    </div>
+
+</body>
+</html>
