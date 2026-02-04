@@ -3,77 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.jpg">
-    <link rel="apple-touch-icon" href="images/favicon.jpg">
-    <title>Bistro Grand Soleil | ビストログランソレーユ</title>
-    <meta name="description" content="熊本市東区のフレンチビストロ「グランソレーユ」。阿蘇赤牛や地元の旬な食材を活かした本格コース料理を、完全予約制の落ち着いた空間で。">
-    <meta property="og:image" content="index_jpeg/iriguti.jpg">
+    <title>Bistro Grand Soleil | ビストロ グランソレーユ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --sun-gold: #F8B500; --deep-brown: #3C2A21; --bg-cream: #FFFEF9; --text-main: #333; }
-        body { margin: 0; font-family: "Georgia", "Hiragino Mincho ProN", serif; background-color: var(--bg-cream); color: var(--text-main); line-height: 1.8; overflow-x: hidden; }
-        nav { background: white; height: 70px; width: 100%; position: sticky; top: 0; z-index: 2000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: var(--sun-gold); }
-        .menu-toggle { display: none; font-size: 1.5rem; color: var(--deep-brown); cursor: pointer; z-index: 3000; }
-        @media (max-width: 768px) {
-            nav { justify-content: space-between; padding: 0 25px; box-sizing: border-box; }
-            .menu-toggle { display: block; }
-            .nav-links { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: rgba(60, 42, 33, 0.98); flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; gap: 40px; }
-            .nav-links.active { right: 0; }
-            .nav-links a { color: white; font-size: 1.2rem; }
+        :root { 
+            --sun-gold: #F8B500; 
+            --deep-brown: #3C2A21; 
+            --bg-cream: #FFFEF9; 
         }
-        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('index_jpeg/iriguti.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
-        .hero h1 { font-size: 3.5rem; margin: 0; font-style: italic; letter-spacing: 0.1em; font-weight: normal; }
-        .hero p { font-size: 1.2rem; letter-spacing: 0.3em; margin-top: 10px; }
-        .container { max-width: 900px; margin: 0 auto; padding: 80px 20px; text-align: center; }
-        h2 { font-size: 2rem; color: var(--deep-brown); margin-bottom: 40px; font-weight: normal; }
-        .intro-text { font-size: 1.1rem; line-height: 2.2; margin-bottom: 60px; color: #555; }
-        .access-info { background: #fff; padding: 60px 20px; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.02); text-align: left; }
-        .access-info p { margin: 10px 0; font-size: 1rem; }
-        footer { text-align: center; padding: 100px 20px; color: #aaa; font-size: 0.8rem; }
+        
+        body { 
+            font-family: "Times New Roman", serif; 
+            background-color: var(--bg-cream); 
+            color: var(--deep-brown);
+            margin: 0; 
+            line-height: 1.6;
+        }
+
+        /* --- 共通ナビゲーションバー --- */
+        nav { 
+            background: white; 
+            height: 80px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 50px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            color: var(--deep-brown);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .nav-logo:hover { color: var(--sun-gold); }
+
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--deep-brown); 
+            font-weight: bold; 
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--sun-gold); }
+
+        /* --- アクセスボタンを完全に非表示にする --- */
+        .access-button, .btn-access, #access-btn, .top-access-btn { 
+            display: none !important; 
+        }
+
+        /* メインビジュアル */
+        .hero {
+            position: relative;
+            height: 80vh;
+            background: url('index_jpeg/iriguti.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content h2 { font-size: 3rem; margin: 0; letter-spacing: 4px; }
+        .hero-content p { font-size: 1.2rem; margin-top: 10px; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+        
+        .intro-text { font-size: 1.1rem; max-width: 700px; margin: 0 auto 40px; }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links { gap: 15px; }
+            .hero-content h2 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
     <nav>
-        <div style="font-weight: bold; letter-spacing: 1px; color: var(--deep-brown); margin-left: 20px;">GRAND SOLEIL</div>
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-        <div class="nav-links" id="nav-content">
-            <a href="index.html" style="color: var(--sun-gold);">Home</a>
-            <a href="topics.html">Topics</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="menu.html">Drinks & Wine</a>
-            <a href="#access">Access</a>
+        <a href="index.html" class="nav-logo">GRAND SOLEIL</a>
+        <div class="nav-links">
+            <a href="index.html" style="color: var(--sun-gold);">HOME</a>
+            <a href="topics.html">TOPICS</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="menu.html">MENU</a>
         </div>
     </nav>
-    <div class="hero">
-        <h1>Bistro Grand Soleil</h1>
-        <p>ビストロ グランソレーユ</p>
-    </div>
-    <div class="container">
-        <h2>Concept</h2>
-        <div class="intro-text">熊本・阿蘇の豊かな自然が育んだ食材を中心に、<br>一皿一皿に物語を込めたフレンチをご提供いたします。<br>完全予約制の落ち着いた空間で、至福のひとときをお過ごしください。</div>
-        <h2 id="access">Access & Info</h2>
-        <div class="access-info">
-            <div style="margin-bottom: 30px;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.486242337775!2d130.7628864757519!3d32.79257637365737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3540ef7779d72a7b%3A0x6e969d255140b2f1!2z44CSODYyLTA5MDgg54aK5pys55yM54aK5pys5biC5p2x5Yy65paw55Sf77yS5LiB55uu77yS4oiS77yR77yQ!5e0!3m2!1sja!2sjp!4v1715600000000!5m2!1sja!2sjp" width="100%" height="350" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <p><strong>住所:</strong> 熊本県熊本市東区新生2-2-10</p>
-            <p><strong>電話:</strong> 096-377-8228</p>
-            <p><strong>営業時間:</strong> 完全予約制（ランチ・ディナー）</p>
-            <p style="margin-top: 20px; color: var(--sun-gold); font-weight: bold;">※ご来店の際は事前にお電話にてご予約をお願いいたします。</p>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Bistrot Grand Soleil</h2>
+            <p>旬の食材と、心地よい時間を。</p>
         </div>
-    </div>
-    <footer><p>Bistro Grand Soleil</p>© 2026 Bistro Grand Soleil</footer>
-    <script>
-        const menu = document.querySelector('#mobile-menu');
-        const menuLinks = document.querySelector('#nav-content');
-        menu.addEventListener('click', () => {
-            menuLinks.classList.toggle('active');
-            menu.querySelector('i').classList.toggle('fa-bars');
-            menu.querySelector('i').classList.toggle('fa-times');
-        });
-    </script>
+    </header>
+
+    <main class="container">
+        <div class="intro-text">
+            <p>熊本の街角に佇む小さなビストロ。<br>
+            「Grand Soleil（大きな太陽）」のように、<br>
+            訪れる人々を温かく照らす料理と空間をお届けします。</p>
+        </div>
+    </main>
+
 </body>
 </html>
