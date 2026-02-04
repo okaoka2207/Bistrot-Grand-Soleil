@@ -6,7 +6,6 @@
     <title>Gallery | Bistro Grand Soleil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 他のページと共通のベースカラー */
         :root { 
             --sun-gold: #F8B500; 
             --deep-brown: #3C2A21; 
@@ -21,49 +20,70 @@
             line-height: 1.6;
         }
 
-        /* 共通ナビゲーション */
+        /* --- 修正ポイント：ナビゲーションバー --- */
         nav { 
             background: white; 
-            height: 70px; 
+            height: 80px; 
             display: flex; 
-            justify-content: center; 
+            justify-content: space-between; 
             align-items: center; 
+            padding: 0 50px; 
             position: sticky; 
             top: 0; 
             z-index: 100; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
         }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.9rem; }
+
+        .nav-logo {
+            text-decoration: none;
+            color: var(--deep-brown);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--deep-brown); 
+            font-weight: bold; 
+            font-size: 0.9rem;
+        }
         .nav-links a:hover { color: var(--sun-gold); }
 
+        /* --- 修正ポイント：アクセスボタンを消す --- */
+        .access-button, .btn-access, #access-btn { 
+            display: none !important; 
+        }
+
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        
         h1 { text-align: center; font-size: 2rem; margin-bottom: 50px; letter-spacing: 2px; }
         
-        /* 昼/夜の大きな見出し */
         .category-title {
             background-color: var(--deep-brown);
             color: white;
-            padding: 10px 20px;
-            margin: 40px 0 20px 0;
+            padding: 12px 20px;
+            margin: 50px 0 20px 0;
             font-size: 1.2rem;
             border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .course-label {
             font-size: 1.1rem;
             border-left: 4px solid var(--sun-gold);
             padding-left: 10px;
-            margin: 20px 0;
+            margin: 30px 0 15px 0;
+            font-weight: bold;
         }
 
-        /* ギャラリーグリッド */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         .gallery-item { text-align: center; }
@@ -74,9 +94,11 @@
             border-radius: 4px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .caption { font-size: 0.8rem; margin-top: 5px; }
+        .caption { font-size: 0.8rem; margin-top: 8px; color: #666; }
 
         @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links { gap: 15px; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
@@ -84,45 +106,11 @@
 <body>
 
     <nav>
+        <a href="index.html" class="nav-logo">GRAND SOLEIL</a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="topics.html">Topics</a>
-            <a href="gallery.html" style="color: var(--sun-gold);">Gallery</a>
-            <a href="menu.html">Menu</a>
+            <a href="index.html">HOME</a>
+            <a href="topics.html">TOPICS</a>
+            <a href="gallery.html" style="color: var(--sun-gold);">GALLERY</a>
+            <a href="menu.html">MENU</a>
         </div>
-    </nav>
-
-    <div class="container">
-        <h1>Gallery</h1>
-
-        <h2 class="category-title"><i class="fas fa-sun"></i> LUNCH COURSES</h2>
-        
-        <div class="course-label">Lunch A</div>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="gallery_photo/A_amyu-zu.jpg"><div class="caption">アミューズ</div></div>
-            <div class="gallery-item"><img src="gallery_photo/A_supu.jpg"><div class="caption">スープ</div></div>
-            <div class="gallery-item"><img src="gallery_photo/A_mein.jpg"><div class="caption">メイン</div></div>
-            <div class="gallery-item"><img src="gallery_photo/A_deza-to.jpg"><div class="caption">デザート</div></div>
-        </div>
-
-        <div class="course-label">Lunch B & C</div>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="gallery_photo/LB_1.jpg"><div class="caption">料理名</div></div>
-            <div class="gallery-item"><img src="gallery_photo/LB_2.jpg"><div class="caption">料理名</div></div>
-            <div class="gallery-item"><img src="gallery_photo/LC_1.jpg"><div class="caption">料理名</div></div>
-            <div class="gallery-item"><img src="gallery_photo/LC_2.jpg"><div class="caption">料理名</div></div>
-        </div>
-
-        <h2 class="category-title"><i class="fas fa-moon"></i> DINNER COURSES</h2>
-        
-        <div class="course-label">Dinner A, B, C</div>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="gallery_photo/DA_1.jpg"><div class="caption">ディナーA</div></div>
-            <div class="gallery-item"><img src="gallery_photo/DB_1.jpg"><div class="caption">ディナーB</div></div>
-            <div class="gallery-item"><img src="gallery_photo/DC_1.jpg"><div class="caption">ディナーC</div></div>
-            <div class="gallery-item"><img src="gallery_photo/DC_2.jpg"><div class="caption">ディナー料理</div></div>
-        </div>
-    </div>
-
-</body>
-</html>
+    </nav
