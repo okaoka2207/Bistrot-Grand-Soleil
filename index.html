@@ -42,9 +42,32 @@ nav {
     letter-spacing: 2px; 
 }
 
+
+/* --- ナビゲーションを他ページと完全統一 --- */
 .nav-links { 
     display: flex; 
-    gap: 30px; /* 他のページと間隔を合わせる */
+    gap: 30px; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--deep-brown); /* ボタン色ではなく、文字色に統一 */
+    font-weight: bold; 
+    font-size: 0.9rem;
+    transition: 0.3s;
+    background: none; /* 背景色を削除 */
+    padding: 0;      /* パディングをリセット */
+    border-radius: 0; /* 角丸を削除 */
+}
+
+.nav-links a:hover { 
+    color: var(--sun-gold); /* ホバーした時だけ金色に */
+    background: none;
+}
+
+/* HOMEページなので、HOMEの文字だけ最初から金色にしたい場合はこちら */
+.nav-links a.active {
+    color: var(--sun-gold);
 }
 
 /* スマホ用のレスポンシブも統一 */
