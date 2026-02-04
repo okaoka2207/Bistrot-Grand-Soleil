@@ -20,7 +20,7 @@
             line-height: 1.6;
         }
 
-        /* --- 共通ナビゲーションバー --- */
+        /* --- 共通ナビゲーション --- */
         nav { 
             background: white; 
             height: 80px; 
@@ -33,31 +33,10 @@
             z-index: 100; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
         }
-
-        .nav-logo {
-            text-decoration: none;
-            color: var(--deep-brown);
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
-        .nav-logo:hover { color: var(--sun-gold); }
-
+        .nav-logo { text-decoration: none; color: var(--deep-brown); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--deep-brown); 
-            font-weight: bold; 
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
+        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--sun-gold); }
-
-        /* --- アクセスボタンを完全に非表示にする --- */
-        .access-button, .btn-access, #access-btn, .top-access-btn { 
-            display: none !important; 
-        }
 
         /* メインビジュアル */
         .hero {
@@ -70,26 +49,44 @@
             color: white;
             text-align: center;
         }
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
+        .hero-content { position: relative; z-index: 1; }
         .hero-content h2 { font-size: 3rem; margin: 0; letter-spacing: 4px; }
-        .hero-content p { font-size: 1.2rem; margin-top: 10px; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
         
-        .intro-text { font-size: 1.1rem; max-width: 700px; margin: 0 auto 40px; }
+        /* インフォメーションセクション */
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+            text-align: left;
+        }
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .info-box h3 {
+            border-bottom: 2px solid var(--sun-gold);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: var(--deep-brown);
+        }
+        .info-box table { width: 100%; border-collapse: collapse; }
+        .info-box th, .info-box td { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+        .info-box th { width: 100px; text-align: left; color: #888; font-weight: normal; }
+
+        /* マップ */
+        .map-container { grid-column: span 2; margin-top: 20px; border-radius: 8px; overflow: hidden; height: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
-            .nav-links { gap: 15px; }
-            .hero-content h2 { font-size: 2rem; }
+            .info-section { grid-template-columns: 1fr; }
+            .map-container { grid-column: span 1; }
         }
     </style>
 </head>
@@ -114,10 +111,33 @@
     </header>
 
     <main class="container">
-        <div class="intro-text">
-            <p>熊本の街角に佇む小さなビストロ。<br>
+        <div style="text-align: center; margin-bottom: 80px;">
+            <p style="font-size: 1.2rem;">熊本の街角に佇む小さなビストロ。<br>
             「Grand Soleil（大きな太陽）」のように、<br>
             訪れる人々を温かく照らす料理と空間をお届けします。</p>
+        </div>
+
+        <div class="info-section">
+            <div class="info-box">
+                <h3><i class="far fa-clock"></i> Information</h3>
+                <table>
+                    <tr><th>Lunch</th><td>11:00 - 14:30 (L.O. 13:30)</td></tr>
+                    <tr><th>Dinner</th><td>17:00 - 22:00 (L.O. 19:30)</td></tr>
+                    <tr><th>Closed</th><td>毎週月曜日・第3火曜日</td></tr>
+                    <tr><th>Payment</th><td>現金のみ</td></tr>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-map-marker-alt"></i> Access</h3>
+                <p>〒861-1331 熊本県菊池市隈府１３０９−１</p>
+                <p>TEL: 096-377-8228</p>
+                <p>駐車場: 8台完備</p>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.503454794154!2d130.81308827658097!3d32.99047717357531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3540e53a32247b97%3A0xc621b44ec6cc078b!2z44CSODYxLTEzMzEg54aK5pys55yM6I-K5rGg5biC6ZqI5bqc77yR77yT77yQ77yZ4oiS77yR!5e0!3m2!1sja!2sjp!4v1714700000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </main>
 
