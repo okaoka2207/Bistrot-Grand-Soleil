@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="熊本のビストロ グランソレーユ（Bistro Grand Soleil）の最新情報。コース料金改定のお知らせ。">
     <title>Topics | Bistro Grand Soleil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -10,31 +11,64 @@
             --sun-gold: #F8B500; 
             --deep-brown: #3C2A21; 
             --bg-cream: #FFFEF9; 
+            --white: #FFFFFF;
         }
-        body { font-family: "Times New Roman", serif; background-color: var(--bg-cream); color: var(--deep-brown); margin: 0; line-height: 1.6; }
+        
+        body { 
+            font-family: "Times New Roman", "Yu Mincho", "MS Mincho", serif;
+            background-color: var(--bg-cream); 
+            color: var(--deep-brown); 
+            margin: 0; 
+            line-height: 1.8; 
+        }
 
-        /* --- 統一ナビゲーションバー --- */
+        /* --- ナビゲーションバー --- */
         nav { 
-            background: white; height: 80px; display: flex; 
+            background: var(--white); height: 80px; display: flex; 
             justify-content: space-between; align-items: center; 
             padding: 0 50px; position: sticky; top: 0; z-index: 100; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
         }
         .nav-logo { text-decoration: none; color: var(--deep-brown); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.9rem; }
+        .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--sun-gold); }
 
-        /* アクセスボタン非表示 */
-        .access-button, .btn-access, #access-btn { display: none !important; }
+        /* コンテナ */
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 40px; letter-spacing: 3px; position: relative; padding-bottom: 10px; }
+        h1::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 2px; background: var(--sun-gold); }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        h1 { text-align: center; font-size: 2rem; margin-bottom: 50px; letter-spacing: 2px; }
-        .topic-item { background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid var(--sun-gold); }
-        .topic-date { font-size: 0.85rem; color: #888; margin-bottom: 5px; }
-        .topic-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+        /* トピックアイテム */
+        .topic-item { 
+            background: var(--white); padding: 30px; margin-bottom: 30px; 
+            border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+            border-left: 6px solid var(--sun-gold);
+            transition: transform 0.3s ease;
+        }
+        .topic-item:hover { transform: translateY(-3px); }
+        
+        .topic-date { font-size: 0.9rem; color: #999; margin-bottom: 8px; font-weight: bold; }
+        .topic-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: var(--deep-brown); }
+        .topic-content { font-size: 1rem; color: #555; }
+        .price-highlight { font-weight: bold; color: #d9534f; } /* 価格変更を目立たせる色 */
 
-        @media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { gap: 15px; } }
+        /* 予約導線 */
+        .contact-info { text-align: center; margin-top: 60px; padding: 40px; background: #fff; border-radius: 12px; }
+        .btn-tel { 
+            display: inline-block; padding: 15px 30px; background: var(--sun-gold); 
+            color: white; text-decoration: none; border-radius: 50px; font-weight: bold; 
+            margin-top: 20px; transition: 0.3s;
+        }
+        .btn-tel:hover { opacity: 0.8; }
+
+        @media (max-width: 768px) { 
+            nav { padding: 0 20px; height: 60px; } 
+            .nav-logo { font-size: 1.2rem; }
+            .nav-links { gap: 12px; } 
+            .nav-links a { font-size: 0.75rem; }
+            h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
@@ -47,13 +81,35 @@
             <a href="menu.html">MENU</a>
         </div>
     </nav>
+
     <div class="container">
         <h1>Topics</h1>
+
+        <article class="topic-item">
+            <div class="topic-date">2026.03.03</div>
+            <div class="topic-title">Bコース価格改定のお知らせ</div>
+            <p class="topic-content">
+                いつもビストロ グランソレーユをご愛顧いただき、誠にありがとうございます。<br>
+                当店では、より高品質な食材の提供とサービスの維持・向上を図るため、誠に勝手ながら本日よりBコースの価格を下記の通り改定させていただくこととなりました。
+            </p>
+            <p class="topic-content">
+                <strong>Bコース：</strong>旧価格 4,000円 → <span class="price-highlight">新価格 5,000円（税込）</span>
+            </p>
+            <p class="topic-content">
+                今後も皆様にご満足いただける料理をお届けできるよう、より一層努めてまいります。何卒ご理解を賜りますよう、お願い申し上げます。
+            </p>
+        </article>
+
         <article class="topic-item">
             <div class="topic-date">2026.02.04</div>
             <div class="topic-title">ホームページを公開いたしました</div>
-            <p>ビストロ グランソレーユの新しいホームページへようこそ。最新情報をこちらで発信してまいります。</p>
+            <p class="topic-content">ビストロ グランソレーユの新しいホームページへようこそ。こちらで季節のメニューや営業日の最新情報を発信してまいります。</p>
         </article>
+
+        <div class="contact-info">
+            <p>ご予約・お問い合わせはお電話にて承っております</p>
+            <a href="tel:0960000000" class="btn-tel"><i class="fas fa-phone"></i> お電話はこちら</a>
+        </div>
     </div>
 </body>
 </html>
