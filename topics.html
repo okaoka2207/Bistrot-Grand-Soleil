@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="熊本のビストロ グランソレーユ（Bistro Grand Soleil）の最新情報。コース料金改定のお知らせ。">
     <title>Topics | Bistro Grand Soleil</title>
-    <meta name="description" content="ビストロ・グランソレイユの最新情報・お知らせ。季節の限定メニューのご案内や、コース料金改定など、お店からの大切なお知らせを掲載しています。">
+    <meta name="description" content="熊本のビストロ グランソレーユ（Bistro Grand Soleil）の最新情報。現在、ホール・キッチンスタッフを急募しております。お気軽にお電話ください。">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { 
@@ -13,6 +12,7 @@
             --deep-brown: #3C2A21; 
             --bg-cream: #FFFEF9; 
             --white: #FFFFFF;
+            --alert-red: #d9534f; /* 急募用の色 */
         }
         
         body { 
@@ -49,19 +49,35 @@
         }
         .topic-item:hover { transform: translateY(-3px); }
         
+        /* アルバイト募集用の特別スタイル */
+        .recruit-item {
+            border-left: 6px solid var(--alert-red);
+            background: #fffafa; /* ほんのり赤みのある背景 */
+        }
+        .recruit-badge {
+            background: var(--alert-red);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
         .topic-date { font-size: 0.9rem; color: #999; margin-bottom: 8px; font-weight: bold; }
         .topic-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: var(--deep-brown); }
         .topic-content { font-size: 1rem; color: #555; }
-        .price-highlight { font-weight: bold; color: #d9534f; } /* 価格変更を目立たせる色 */
+        .price-highlight { font-weight: bold; color: var(--alert-red); }
 
-        /* 予約導線 */
+        /* 予約・応募導線 */
         .contact-info { text-align: center; margin-top: 60px; padding: 40px; background: #fff; border-radius: 12px; }
         .btn-tel { 
             display: inline-block; padding: 15px 30px; background: var(--sun-gold); 
             color: white; text-decoration: none; border-radius: 50px; font-weight: bold; 
             margin-top: 20px; transition: 0.3s;
+            font-size: 1.2rem;
         }
-        .btn-tel:hover { opacity: 0.8; }
+        .btn-tel:hover { opacity: 0.8; transform: scale(1.05); }
 
         @media (max-width: 768px) { 
             nav { padding: 0 20px; height: 60px; } 
@@ -86,30 +102,46 @@
     <div class="container">
         <h1>Topics</h1>
 
+        <article class="topic-item recruit-item">
+            <span class="recruit-badge">急募</span>
+            <div class="topic-date">2026.03.03</div>
+            <div class="topic-title">スタッフ（アルバイト・パート）募集のお知らせ</div>
+            <p class="topic-content">
+                現在、ビストロ グランソレーユでは一緒に働いてくれるスタッフを募集しています。<br>
+                アットホームな雰囲気の中で、本格的なフレンチのサービスや調理を学んでみませんか？
+            </p>
+            <p class="topic-content">
+                <strong>【募集職種】</strong>ホールスタッフ、キッチン補助<br>
+                <strong>【勤務時間】</strong>シフト制（ランチ・ディナー・週末入れる方歓迎）<br>
+                ※未経験者の方も丁寧に指導いたします。
+            </p>
+            <p class="topic-content">
+                少しでも興味のある方は、まずはお気軽にお電話にてお問い合わせください！<br>
+                担当：採用係（096-377-8228）
+            </p>
+        </article>
+
         <article class="topic-item">
             <div class="topic-date">2026.03.03</div>
             <div class="topic-title">Bコース価格改定のお知らせ</div>
             <p class="topic-content">
-                いつもビストロ グランソレーユをご愛顧いただき、誠にありがとうございます。<br>
-                当店では、より高品質な食材の提供とサービスの維持・向上を図るため、誠に勝手ながら3月よりBコースの価格を下記の通り改定させていただくこととなりました。
+                いつもご愛顧いただき誠にありがとうございます。より高品質な食材の提供とサービス維持のため、3月よりBコースの価格を下記の通り改定させていただきます。
             </p>
             <p class="topic-content">
                 <strong>Bコース：</strong>旧価格 4,000円 → <span class="price-highlight">新価格 5,000円（税込）</span>
-            </p>
-            <p class="topic-content">
-                今後も皆様にご満足いただける料理をお届けできるよう、より一層努めてまいります。何卒ご理解を賜りますよう、お願い申し上げます。
             </p>
         </article>
 
         <article class="topic-item">
             <div class="topic-date">2026.02.04</div>
             <div class="topic-title">ホームページを公開いたしました</div>
-            <p class="topic-content">ビストロ グランソレーユの新しいホームページへようこそ。こちらで季節のメニューや営業日の最新情報を発信してまいります。</p>
+            <p class="topic-content">最新情報をこちらで発信してまいります。</p>
         </article>
 
         <div class="contact-info">
-            <p>ご予約・お問い合わせはお電話にて承っております</p>
-            <a href="tel:0960000000" class="btn-tel"><i class="fas fa-phone"></i> お電話はこちら</a>
+            <p>ご予約・求人への応募はこちら</p>
+            <a href="tel:0963778228" class="btn-tel"><i class="fas fa-phone"></i> 096-377-8228</a>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">（営業時間内にお願いいたします）</p>
         </div>
     </div>
 </body>
